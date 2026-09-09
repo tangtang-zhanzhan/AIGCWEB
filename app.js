@@ -1,5 +1,5 @@
 const root = document.querySelector('#root')
-const assets = '/portfolio/'
+const assets = 'portfolio/'
 const data = {
   images: [
     { title: '服装商品详情', type: '广告设计', folder: '广告设计/服装类', note: '为服饰梳理版式、卖点与内容节奏，输出成套详情视觉。', gallery: [assets + '广告设计/服装类/图片节点 1.png', assets + '广告设计/服装类/图片节点 1(1).png', assets + '广告设计/服装类/图片节点 2.png', assets + '广告设计/服装类/图片节点 4.png', assets + '广告设计/服装类/图片节点 5.png', assets + '广告设计/服装类/图片节点 6.png'] },
@@ -85,18 +85,19 @@ const resumeAnswers = [
 const state = { route: routeFromLocation(), filter: '全部', theme: localStorage.getItem('portfolio-theme') || 'light', modal: null, menu: false, workflow: 'skill', workflowStep: 0, workflowRun: { mode: null, status: 'idle', step: -1, input: '', output: null }, workflowRunId: 0, workflowTimer: null, resumeAnswer: '', resumeOpen: false }
 
 function routeFromLocation() {
-  const path = window.location.pathname
-  if (path === '/images') return 'work'
-  if (path === '/xiaohongshu') return 'social'
-  if (path === '/videos') return 'motion'
-  if (path === '/skill-agent') return 'systems'
-  if (path === '/about') return 'about'
+  const segments = window.location.pathname.split('/').filter(Boolean)
+  const leaf = segments.length ? segments[segments.length - 1].toLowerCase() : ''
+  if (leaf === 'images') return 'work'
+  if (leaf === 'xiaohongshu') return 'social'
+  if (leaf === 'videos') return 'motion'
+  if (leaf === 'skill-agent') return 'systems'
+  if (leaf === 'about') return 'about'
   return 'home'
 }
 function routeTo(route) {
   cancelWorkflowRun()
-  const paths = { home: '/', work: '/images', social: '/xiaohongshu', motion: '/videos', systems: '/skill-agent', about: '/about' }
-  window.history.pushState({}, '', paths[route] || '/')
+  const paths = { home: './', work: 'images', social: 'xiaohongshu', motion: 'videos', systems: 'skill-agent', about: 'about' }
+  window.history.pushState({}, '', paths[route] || './')
   state.route = route; state.filter = '全部'; state.modal = null; state.menu = false; state.resumeOpen = false
   render(); window.scrollTo({ top: 0, behavior: 'smooth' })
 }

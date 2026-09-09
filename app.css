@@ -117,7 +117,7 @@
 .flow-step.is-complete>span{color:#9bcaa7}.flow-step.is-complete>b{color:#9bcaa7;opacity:1}.preview-dot.is-running{background:#f3c36f;box-shadow:0 0 9px #f3c36f;animation:demo-pulse 1s ease-in-out infinite}.preview-dot.is-done{background:#8bc69b;box-shadow:0 0 9px #8bc69b}
 @keyframes demo-pulse{0%,100%{opacity:.45;transform:scale(.8)}50%{opacity:1;transform:scale(1.2)}}
 @media(max-width:800px){.demo-panel{padding:12px}.demo-panel-head{display:block}.demo-status{margin-top:8px}.demo-launch{display:grid;grid-template-columns:1fr auto}.demo-result-items{grid-template-columns:1fr}.demo-result{margin-bottom:16px}}
-.tool-item .tool-logo{background-image:url('/portfolio/ai工具图标/generated/unified-bg-tile.png');background-size:cover;background-position:center;border-color:#2a2928;box-shadow:0 4px 12px #0008,inset 0 1px 0 #ffffff24}
+.tool-item .tool-logo{background-image:url('portfolio/ai工具图标/generated/unified-bg-tile.png');background-size:cover;background-position:center;border-color:#2a2928;box-shadow:0 4px 12px #0008,inset 0 1px 0 #ffffff24}
 .tool-item .tool-logo:before{display:none}
 .tool-item .tool-logo img{filter:grayscale(1) brightness(0) invert(1) contrast(1.12);width:31px;height:31px;max-width:31px;max-height:31px}
 .tool-item .tool-logo b{color:#fff!important;text-shadow:0 1px 4px #000;font-weight:800}
@@ -179,7 +179,7 @@
 }
 
 .tool-item .tool-logo img{width:100%!important;height:100%!important;max-width:none!important;max-height:none!important;object-fit:contain;margin:0;padding:6px;box-sizing:border-box}
-.tool-logo-gpt-image{background-image:url('/portfolio/ai工具图标/generated/openai-logo-tile.png')!important;background-size:cover;background-position:center;border-color:#31302f!important}
+.tool-logo-gpt-image{background-image:url('portfolio/ai工具图标/generated/openai-logo-tile.png')!important;background-size:cover;background-position:center;border-color:#31302f!important}
 .tool-logo-gpt-image img{width:100%!important;height:100%!important;max-width:none!important;max-height:none!important;object-fit:cover;padding:0;border-radius:14px;opacity:0}
 .tool-logo-libtv img{padding:0;object-fit:cover}
 .tool-logo-codex b,.tool-logo-workbuddy b{font-size:21px!important;letter-spacing:.02em!important}
