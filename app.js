@@ -27,24 +27,11 @@ const data = {
   motion: [
     { title: '人物服装类', type: '电商广告视频', video: assets + '广告视频/人物服装类.mp4', note: '以人物动作和服装细节完成电商短视频节奏。' },
     { title: '家具商品类', type: '电商广告视频', video: assets + '广告视频/家具商品类.mp4', note: '从空间氛围进入产品功能与使用场景。' },
-    { title: '影音商品类', type: '电商广告视频', video: assets + '广告视频/影音商品类.mp4', note: '用镜头语言讲清产品的体验价值。' },
-    { title: '美妆护肤类', type: '电商广告视频', video: assets + '广告视频/美妆护肤类.mp4', note: '从质地、肤感到使用场景的镜头表达。' },
-    { title: '视频节点 4', type: '特效视频', video: assets + '特效视频/视频节点 4 (3).mp4', note: '特效节点与内容包装的节奏实验。' },
-    { title: '视频节点 5', type: '特效视频', video: assets + '特效视频/视频节点 5 (1).mp4', note: '为品牌内容建立更有记忆点的转场与动效。' },
-    { title: '炸裂的鼠标', type: '特效视频', video: assets + '特效视频/炸裂的鼠标.mp4', note: '颗粒、爆点与节奏感的特效包装实验。' },
-    { title: '剑来（特效版）', type: '特效视频', video: assets + '特效视频/剑来.mp4', note: '把剑来世界的时空感做成特效叙事实验。' },
-    { title: '变装视频', type: '特效视频', video: assets + '特效视频/变装视频.mp4', note: '一镜切换与变装的视觉爆发节奏。' },
-    { title: '特效视频', type: '特效视频', video: assets + '特效视频/特效视频.mp4', note: '多种特效手法的混合编排实验。' },
     { title: '兰亭序', type: '剧情短片', video: assets + '剧情短片/兰亭序.mp4', note: 'AI 漫剧与古典文本的视觉化尝试。' },
-    { title: '剑来', type: '剧情短片', video: assets + '剧情短片/剑来.mp4', note: '把世界观设定转译为 AI 漫剧的叙事片段。' },
     { title: '如梦令·常记溪亭日暮', type: '剧情短片', video: assets + '剧情短片/如梦令·常记溪亭日暮.mp4', note: '用古典词境完成一支 AI 漫剧短片。' },
-    { title: '剧情短片 C', type: '剧情短片', video: assets + '剧情短片/C.mp4', note: '剧情片段的转场与叙事节奏实验。' },
     { title: '弱水', type: '剧情短片', video: assets + '剧情短片/弱水.mp4', note: '以意境和情感推进的 AI 漫剧片段。' },
-    { title: '375 第一幕', type: '剧情短片', video: assets + '剧情短片/375第一幕.mp4', note: 'AI 漫剧开场幕的镜头与叙事搭建。' },
-    { title: '9月6日', type: '剧情短片', video: assets + '剧情短片/9月6日.mp4', note: '一支关于时间与等待的 AI 漫剧短片段。' },
     { title: '375路公交车', type: '剧情短片', video: assets + '剧情短片/375路公交车.mp4', note: '一辆末班车上的众生相与叙事张力。' },
     { title: '古诗鉴赏', type: '剧情短片', video: assets + '剧情短片/古诗鉴赏.mp4', note: '把诗词意境逐句转译为 AI 漫剧画面。' },
-    { title: '绘本故事', type: '剧情短片', video: assets + '剧情短片/绘本故事.mp4', note: '用绘本质感讲一个完整的小故事。' },
   ],
   systems: [
     { title: '小红书运营 Agent', type: '智能体创作', image: assets + 'Agent示例/小红书运营agent.png', note: '把选题、内容、审核和发布前检查串成一条工作流。' },
@@ -254,7 +241,7 @@ function render() {
   if (state.route === 'home') content = homeWithTools()
   if (state.route === 'work') content = portfolioPage('images', '商品与品牌视觉', '以商品为核心，建立能直接进入详情页、投放和内容渠道的视觉资产。', ['全部', '广告设计', '海报封面', '人物形象'])
   if (state.route === 'social') content = portfolioPage('social', '运营内容与数据', '把账号定位、内容栏目和复盘数据整理成可持续的内容系统。', ['全部', '多平台运营'])
-  if (state.route === 'motion') content = portfolioPage('motion', '视频与动态内容', '电商短视频、特效包装和 AI 漫剧，覆盖从商品展示到品牌叙事的不同节奏。', ['全部', '电商广告视频', '特效视频', '剧情短片'])
+  if (state.route === 'motion') content = portfolioPage('motion', '视频作品', '剧情向与电商向的 AI 视频内容：用镜头语言铺垫情绪，把产品或故事讲完。', ['全部', '电商广告视频', '剧情短片'])
   if (state.route === 'systems') content = workflowPage(state.workflow)
   if (state.route === 'about') content = aboutPage()
   shell(content)
