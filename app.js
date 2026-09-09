@@ -121,6 +121,11 @@ function toolsSection() {
   const tools = toolCategories.flatMap(category => category.tools)
   return `<section class="section-block tools-section"><div class="section-heading"><div><p class="eyebrow">TOOLS / 工具栈</p><h2>按任务选择工具，把模型编排成流程。</h2></div><span class="tool-count">${String(tools.length).padStart(2, '0')} TOOLS</span></div><div class="tools-categories">${toolCategories.map((category, categoryIndex) => `<article class="tool-category tool-category-${category.tools.length}"><header><span>${String(categoryIndex + 1).padStart(2, '0')}</span><div><h3>${category.title}</h3><p>${category.note}</p></div></header><div class="tool-list">${category.tools.map(tool => `<div class="tool-item"><span class="tool-logo tool-logo-${tool.family || 'generic'}">${tool.image ? `<img src="${tool.image}" alt="${tool.title} logo" loading="lazy" onerror="this.outerHTML='<b>${tool.mark || '\u00b7'}</b>'" />` : `<b>${tool.mark}</b>`}</span><div class="tool-copy"><strong>${tool.title}</strong><small>${tool.scene}</small></div><span class="tool-level">${tool.level}</span></div>`).join('')}</div></article>`).join('')}</div></section>`
 }
+const marqueeItems = ['商品视觉', '详情图', '海报', '短视频', 'AI 漫剧', '多平台运营', 'Skill / Agent', '视觉工作流']
+function marqueeMarkup() {
+  const item = marqueeItems.map(text => `<span>${text}</span><i>✦</i>`).join('')
+  return `<div class="marquee" aria-hidden="true"><div class="marquee-track">${item}${item}</div></div>`
+}
 function homeWithTools() {
   return homePage().replace('<section class="statement-band">', toolsSection() + '<section class="statement-band">')
 }
@@ -131,7 +136,7 @@ function shell(content) {
 }
 function homePage() {
   const featured = data.images.slice(0, 3)
-  return `<section class="hero-section"><div class="hero-copy"><p class="eyebrow"><i></i> AIGC VISUAL DESIGNER / 2026</p><h1>把商品<br /><em>讲成故事。</em></h1><p class="hero-lede">我是唐婧，一名专注 AIGC 内容创作的视觉设计师。我用生成式视觉、短视频和内容工作流，帮助品牌把一个产品变成一整套可传播的内容资产。</p><div class="hero-actions"><button class="primary-button" data-route="work">浏览作品 <span>↗</span></button><button class="text-button" data-route="about">了解我的方法 <span>→</span></button></div><div class="hero-stats"><span><strong>4</strong><small>内容方向</small></span><span><strong>25+</strong><small>视觉案例</small></span><span><strong>AI</strong><small>工作流思维</small></span></div></div><div class="hero-visual"><div class="visual-tag">CHARACTER / 01</div><div class="model-stage ${state.resumeOpen ? 'assistant-open' : ''}"><div class="model-halo"></div><model-viewer id="hero-model" src="${assets}syrw3D.glb" alt="唐婧的 AI 角色模型" camera-controls auto-rotate rotation-per-second="10deg" shadow-intensity="1" exposure="1.1" environment-image="neutral" interaction-prompt="auto"></model-viewer></div>${resumeAssistant()}<div class="hero-line"></div></div></section><section class="section-block selected-section"><div class="section-heading"><div><p class="eyebrow">SELECTED WORK / 精选案例</p><h2>从第一眼，到下一次点击。</h2></div><button class="text-button" data-route="work">查看全部案例 <span>↗</span></button></div><div class="selected-grid">${featured.map((item, i) => `<button class="selected-card" data-open="${i}" data-set="images"><img src="${coverFor(item)}" alt="${item.title}" /><span><small>${String(i + 1).padStart(2, '0')} / ${item.type}</small><strong>${item.title}</strong><em>查看案例 ↗</em></span></button>`).join('')}</div></section><section class="statement-band"><p class="eyebrow">WHAT I DO / 我能做什么</p><div class="statement-grid"><h2>让视觉好看，<br /><em>也让业务好用。</em></h2><div class="capability-list"><div><span>01</span><strong>商品视觉</strong><p>详情图、海报、人物与场景，建立一套统一的商品表达。</p></div><div><span>02</span><strong>内容视频</strong><p>电商短视频、特效包装和 AI 漫剧，让内容进入传播场景。</p></div><div><span>03</span><strong>工作流</strong><p>用 Skill 与 Agent 把重复生产变成可复用、可检查的流程。</p></div></div></div></section><section class="section-block process-section"><div class="section-heading"><div><p class="eyebrow">PROCESS / 工作方法</p><h2>从需求到交付，保持每一步可复盘。</h2></div></div><div class="process-grid"><div><span>01</span><strong>理解商品</strong><p>先确认受众、卖点和渠道，再决定视觉语言。</p></div><div><span>02</span><strong>快速成片</strong><p>用 AI 加速探索，把方向尽早变成可讨论的画面。</p></div><div><span>03</span><strong>统一系统</strong><p>沉淀版式、提示词和验收标准，让好结果可持续。</p></div><div><span>04</span><strong>交付复盘</strong><p>记录资产、版本和下一轮优化建议，方便团队接手。</p></div></div></section>`
+  return `<section class="hero-section"><div class="hero-copy"><p class="eyebrow"><i></i> AIGC VISUAL DESIGNER / 2026</p><h1>把商品<br /><em>讲成故事。</em></h1><p class="hero-lede">我是唐婧，一名专注 AIGC 内容创作的视觉设计师。我用生成式视觉、短视频和内容工作流，帮助品牌把一个产品变成一整套可传播的内容资产。</p><div class="hero-actions"><button class="primary-button" data-route="work">浏览作品 <span>↗</span></button><button class="text-button" data-route="about">了解我的方法 <span>→</span></button></div><div class="hero-stats"><span><strong>4</strong><small>内容方向</small></span><span><strong>25+</strong><small>视觉案例</small></span><span><strong>AI</strong><small>工作流思维</small></span></div></div><div class="hero-visual"><div class="visual-tag">CHARACTER / 01</div><div class="model-stage ${state.resumeOpen ? 'assistant-open' : ''}"><div class="model-halo"></div><model-viewer id="hero-model" src="${assets}syrw3D.glb" alt="唐婧的 AI 角色模型" camera-controls auto-rotate rotation-per-second="10deg" shadow-intensity="1" exposure="1.1" environment-image="neutral" interaction-prompt="auto"></model-viewer></div>${resumeAssistant()}<div class="hero-line"></div></div></section>${marqueeMarkup()}<section class="section-block selected-section"><div class="section-heading"><div><p class="eyebrow">SELECTED WORK / 精选案例</p><h2>从第一眼，到下一次点击。</h2></div><button class="text-button" data-route="work">查看全部案例 <span>↗</span></button></div><div class="selected-grid">${featured.map((item, i) => `<button class="selected-card" data-open="${i}" data-set="images"><img src="${coverFor(item)}" alt="${item.title}" /><span><small>${String(i + 1).padStart(2, '0')} / ${item.type}</small><strong>${item.title}</strong><em>查看案例 ↗</em></span></button>`).join('')}</div></section><section class="statement-band"><p class="eyebrow">WHAT I DO / 我能做什么</p><div class="statement-grid"><h2>让视觉好看，<br /><em>也让业务好用。</em></h2><div class="capability-list"><div><span>01</span><strong>商品视觉</strong><p>详情图、海报、人物与场景，建立一套统一的商品表达。</p></div><div><span>02</span><strong>内容视频</strong><p>电商短视频、特效包装和 AI 漫剧，让内容进入传播场景。</p></div><div><span>03</span><strong>工作流</strong><p>用 Skill 与 Agent 把重复生产变成可复用、可检查的流程。</p></div></div></div></section><section class="section-block process-section"><div class="section-heading"><div><p class="eyebrow">PROCESS / 工作方法</p><h2>从需求到交付，保持每一步可复盘。</h2></div></div><div class="process-grid"><div><span>01</span><strong>理解商品</strong><p>先确认受众、卖点和渠道，再决定视觉语言。</p></div><div><span>02</span><strong>快速成片</strong><p>用 AI 加速探索，把方向尽早变成可讨论的画面。</p></div><div><span>03</span><strong>统一系统</strong><p>沉淀版式、提示词和验收标准，让好结果可持续。</p></div><div><span>04</span><strong>交付复盘</strong><p>记录资产、版本和下一轮优化建议，方便团队接手。</p></div></div></section>`
 }
 function portfolioPage(kind, title, intro, filters) {
   const items = data[kind]; const visible = state.filter === '全部' ? items : items.filter(item => item.type === state.filter)
@@ -263,12 +268,97 @@ function bindEvents() {
   setupMotion()
 }
 function setupMotion() {
-  const nodes = root.querySelectorAll('.section-block,.statement-band,.process-grid>div,.work-card,.page-intro,.about-layout,.contact-panel')
-  nodes.forEach((node, index) => { node.classList.add('reveal'); node.style.setProperty('--reveal-delay', `${Math.min(index * 45, 260)}ms`) })
-  if (!('IntersectionObserver' in window)) { nodes.forEach(node => node.classList.add('is-visible')); return }
-  const observer = new IntersectionObserver(entries => entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('is-visible'); observer.unobserve(entry.target) } }), { threshold: .12 })
+  const base = '.section-block,.statement-band,.process-grid>div,.page-intro,.about-layout,.contact-panel,.tool-category,.selected-card,.workflow-rail,.flagship-card,.timeline>div,.about-note,.filter-row'
+  const nodes = Array.from(root.querySelectorAll(base))
+  const workCards = Array.from(root.querySelectorAll('.work-card'))
+  if (workCards.length) workCards.forEach((node, index) => { node.classList.add('reveal'); node.style.setProperty('--reveal-delay', `${Math.min(index * 55, 380)}ms`) })
+  nodes.forEach((node, index) => { node.classList.add('reveal'); node.style.setProperty('--reveal-delay', `${Math.min(index * 40, 240)}ms`) })
+  if (!('IntersectionObserver' in window)) { root.querySelectorAll('.reveal').forEach(node => node.classList.add('is-visible')); return }
+  const observer = new IntersectionObserver(entries => entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('is-visible'); observer.unobserve(entry.target) } }), { threshold: .1 })
+  root.querySelectorAll('.reveal').forEach(node => observer.observe(node))
+  root.querySelectorAll('.modal-gallery-item').forEach((item, index) => item.style.setProperty('--i', index))
+  setupCounters()
+  addTilt()
+}
+function setupCounters() {
+  if (window.__counterObserver) window.__counterObserver.disconnect()
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  const done = window.__counterDone = window.__counterDone || new Set()
+  const nodes = Array.from(root.querySelectorAll('.hero-stats strong,.tool-count'))
+  if (!nodes.length) return
+  const observer = new IntersectionObserver(entries => entries.forEach(entry => {
+    if (!entry.isIntersecting) return
+    const el = entry.target
+    observer.unobserve(el)
+    const key = `${state.route}:${el.parentElement?.className || el.className}`
+    if (done.has(key) || reduced) return
+    done.add(key)
+    const text = el.textContent.trim()
+    const match = text.match(/^(\d+)(.*)$/)
+    if (!match) return
+    const target = Number(match[1])
+    const suffix = match[2] || ''
+    const start = performance.now()
+    const duration = 1100
+    const tick = now => { const p = Math.min((now - start) / duration, 1); const eased = 1 - Math.pow(1 - p, 3); el.textContent = String(Math.round(target * eased)) + suffix; if (p < 1) requestAnimationFrame(tick) }
+    requestAnimationFrame(tick)
+  }), { threshold: .5 })
+  window.__counterObserver = observer
   nodes.forEach(node => observer.observe(node))
+}
+function addTilt() {
+  if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+  root.querySelectorAll('.work-card,.selected-card').forEach(card => {
+    let frame = null
+    const move = event => {
+      if (frame) return
+      frame = requestAnimationFrame(() => {
+        const rect = card.getBoundingClientRect()
+        const px = (event.clientX - rect.left) / rect.width - .5
+        const py = (event.clientY - rect.top) / rect.height - .5
+        card.style.transform = `perspective(850px) rotateY(${px * 7}deg) rotateX(${(-py) * 7}deg) translateY(-3px)`
+        frame = null
+      })
+    }
+    const leave = () => { if (frame) cancelAnimationFrame(frame); frame = null; card.style.transform = '' }
+    card.addEventListener('pointermove', move, { passive: true })
+    card.addEventListener('pointerleave', leave, { passive: true })
+  })
+}
+function setupEnhancements() {
+  const progress = document.querySelector('.scroll-progress')
+  const header = document.querySelector('.site-header')
+  const toTop = document.querySelector('[data-to-top]')
+  const glow = document.querySelector('.cursor-glow')
+  let ticking = false
+  const onScroll = () => {
+    if (ticking) return
+    ticking = true
+    requestAnimationFrame(() => {
+      const max = document.documentElement.scrollHeight - window.innerHeight
+      if (progress) progress.style.transform = `scaleX(${max > 0 ? window.scrollY / max : 0})`
+      header?.classList.toggle('is-scrolled', window.scrollY > 24)
+      toTop?.classList.toggle('is-visible', window.scrollY > 480)
+      ticking = false
+    })
+  }
+  window.addEventListener('scroll', onScroll, { passive: true })
+  onScroll()
+  toTop?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }))
+  if (glow && window.matchMedia('(hover: hover) and (pointer: fine)').matches && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    let tx = window.innerWidth / 2, ty = window.innerHeight / 2, cx = tx, cy = ty, frame = null
+    const loop = () => {
+      cx += (tx - cx) * .12
+      cy += (ty - cy) * .12
+      glow.style.transform = `translate3d(${cx}px, ${cy}px, 0) translate(-50%, -50%)`
+      if (Math.abs(tx - cx) + Math.abs(ty - cy) > .1) frame = requestAnimationFrame(loop)
+      else { frame = null; glow.style.opacity = 0 }
+    }
+    window.addEventListener('pointermove', event => { tx = event.clientX; ty = event.clientY; glow.style.opacity = 1; if (!frame) frame = requestAnimationFrame(loop) }, { passive: true })
+  }
 }
 window.addEventListener('popstate', () => { state.route = routeFromLocation(); render() })
 window.addEventListener('keydown', event => { if (event.key !== 'Escape') return; if (state.modal) { state.modal = null; render(); return } if (state.resumeOpen) { state.resumeOpen = false; render() } })
 render()
+setupEnhancements()
