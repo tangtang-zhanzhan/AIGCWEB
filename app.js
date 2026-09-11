@@ -10,13 +10,13 @@ const data = {
     { title: '人物海报', type: '海报封面', image: assets + '海报封面/人物海报类.png', note: '人物视觉与商业传播之间的平衡练习。' },
     { title: '节日海报', type: '海报封面', image: assets + '海报封面/节日海报.png', note: '把节日氛围、活动信息与商品卖点放进一张可投放的画面。' },
     { title: '卡通海报', type: '海报封面', image: assets + '海报封面/卡通海报类.png', note: '用卡通造型完成轻松、有辨识度的海报表达。' },
-    { title: '真人写实类', type: '人物形象', image: assets + '人物形象/真人写实类.png', note: '为个人 IP 与内容栏目建立稳定的形象资产。' },
-    { title: '古风写实类', type: '人物形象', image: assets + '人物形象/古风写实类.png', note: '从风格设定到成片输出的视觉探索。' },
-    { title: '真人意境类', type: '人物形象', image: assets + '人物形象/真人意境类.png', note: '用氛围与叙事服务人物内容。' },
-    { title: '插画类古风', type: '人物形象', image: assets + '人物形象/插画类古风.png', note: '用插画语言重塑古风人物，探索风格化表达。' },
-    { title: '3D模型类', type: '人物形象', image: assets + '人物形象/3D模型类.png', note: '从平面转向 3D 造型，建立可多角度展示的角色形象。' },
-    { title: '男主（周铭）', type: '人物形象', image: assets + '人物形象/男主（周铭）.png', note: '围绕故事人物完成角色设定与形象延展。' },
-    { title: '人物形象 01', type: '人物形象', image: assets + '人物形象/1.png', note: '人物形象的基础设定与统一视觉参考。' },
+    { title: '真人写实类', type: '人物形象', image: assets + '角色设计/真人写实类.png', note: '为个人 IP 与内容栏目建立稳定的形象资产。' },
+    { title: '古风写实类', type: '人物形象', image: assets + '角色设计/古风写实类.png', note: '从风格设定到成片输出的视觉探索。' },
+    { title: '真人意境类', type: '人物形象', image: assets + '角色设计/真人意境类.png', note: '用氛围与叙事服务人物内容。' },
+    { title: '插画类古风', type: '人物形象', image: assets + '角色设计/插画类古风.png', note: '用插画语言重塑古风人物，探索风格化表达。' },
+    { title: '3D模型类', type: '人物形象', image: assets + '角色设计/3D模型类.png', note: '从平面转向 3D 造型，建立可多角度展示的角色形象。' },
+    { title: '男主（周铭）', type: '人物形象', image: assets + '角色设计/男主（周铭）.png', note: '围绕故事人物完成角色设定与形象延展。' },
+    { title: '人物形象 01', type: '人物形象', image: assets + '角色设计/1.png', note: '人物形象的基础设定与统一视觉参考。' },
   ],
   social: [
     { title: '小红书主页搭建', type: '多平台运营', image: assets + '小红书运营/小红书首页.jpg', note: '把账号定位、栏目结构和封面规则变成可执行的主页。' },
@@ -27,38 +27,27 @@ const data = {
   motion: [
     { title: '人物服装类', type: '电商广告视频', video: assets + '广告视频/人物服装类.mp4', note: '以人物动作和服装细节完成电商短视频节奏。' },
     { title: '家具商品类', type: '电商广告视频', video: assets + '广告视频/家具商品类.mp4', note: '从空间氛围进入产品功能与使用场景。' },
+    { title: '鼎盛-磁疗垫', type: '电商广告视频', video: assets + '广告视频/鼎盛-磁疗垫.mp4', note: '磁疗垫产品广告，突出功能卖点与使用场景。' },
     { title: '兰亭序', type: '剧情短片', video: assets + '剧情短片/兰亭序.mp4', note: 'AI 漫剧与古典文本的视觉化尝试。' },
     { title: '如梦令·常记溪亭日暮', type: '剧情短片', video: assets + '剧情短片/如梦令·常记溪亭日暮.mp4', note: '用古典词境完成一支 AI 漫剧短片。' },
     { title: '弱水', type: '剧情短片', video: assets + '剧情短片/弱水.mp4', note: '以意境和情感推进的 AI 漫剧片段。' },
     { title: '375路公交车', type: '剧情短片', video: assets + '剧情短片/375路公交车.mp4', note: '一辆末班车上的众生相与叙事张力。' },
     { title: '古诗鉴赏', type: '剧情短片', video: assets + '剧情短片/古诗鉴赏.mp4', note: '把诗词意境逐句转译为 AI 漫剧画面。' },
   ],
-  systems: [
-    { title: '小红书运营 Agent', type: '智能体创作', image: assets + 'Agent示例/小红书运营agent.png', note: '把选题、内容、审核和发布前检查串成一条工作流。' },
-    { title: '视觉生成 Skill', type: 'Skill 工作流', image: assets + 'skill截图示例/视觉生成.png', note: '将视觉生成拆成可复用、可验收的步骤。' },
-    { title: '数据 Skill', type: 'Skill 工作流', image: assets + 'skill截图示例/数据skill.png', note: '帮助内容团队快速完成结构化的数据整理。' },
-    { title: '笔记文案 Skill', type: 'Skill 工作流', image: assets + 'skill截图示例/笔记文案skill.png', note: '从洞察到文案，沉淀稳定的生产提示。' },
-  ],
+  systems: [],
 }
 const toolCategories = [
   { title: '图像类', note: '商品视觉、人物设定与多模态探索', tools: [
-    { title: 'Nano Banana 2', scene: '商品主视觉、人物与场景生成', level: '熟练', image: assets + 'ai工具图标/logos/nano-banana.svg', mark: 'NB2', family: 'nano' },
-    { title: 'Nano Banana Pro', scene: '高质感商业图、细节修图与变体', level: '熟悉', image: assets + 'ai工具图标/logos/nano-banana.svg', mark: 'NBP', family: 'nano' },
-    { title: 'GPT Image 2 系列', scene: '文字排版、商品变体与精修', level: '熟悉', image: assets + 'ai工具图标/generated/openai-logo-tile.png', family: 'gpt-image' },
-    { title: 'Midjourney', scene: '风格参考、构图探索与视觉实验', level: '熟悉', image: assets + 'ai工具图标/logos/midjourney.svg', mark: 'MJ', family: 'mj' },
-    { title: '即梦 AI', scene: '灵感出图与视频素材生成', level: '常用', image: assets + 'ai工具图标/logos/jimeng.png', mark: 'JM', family: 'jimeng' },
-    { title: 'ChatGPT', scene: '对话、文案与创作细节打磨', level: '常用', image: assets + 'ai工具图标/logos/chatgpt.svg', mark: 'GPT', family: 'chatgpt' },
-    { title: '豆包', scene: '快捷出图与日常创作助手', level: '常用', image: assets + 'ai工具图标/logos/doubao.png', mark: 'DB', family: 'doubao' },
+    { title: 'Midjourney', scene: '风格参考、构图探索与视觉实验', level: '熟悉', image: assets + 'ai工具图标/MJ.png', mark: 'MJ', family: 'mj' },
+    { title: '即梦 AI', scene: '灵感出图与视频素材生成', level: '常用', image: assets + 'ai工具图标/jimeng.png', mark: 'JM', family: 'jimeng' },
+    { title: 'ChatGPT', scene: '对话、文案与创作细节打磨', level: '常用', image: assets + 'ai工具图标/chatgpt.png', mark: 'GPT', family: 'chatgpt' },
+    { title: '豆包', scene: '快捷出图与日常创作助手', level: '常用', image: assets + 'ai工具图标/豆包.png', mark: 'DB', family: 'doubao' },
   ] },
   { title: '视频类', note: '动态广告、短视频首帧与素材灵感', tools: [
-    { title: 'Seedance / 商品广告', scene: '商品镜头、动态展示与广告片', level: '熟练', image: assets + 'ai工具图标/logos/bytedance.svg', mark: 'SD', family: 'seedance' },
-    { title: 'Kling 系列', scene: '人物动作、产品动态与镜头控制', level: '熟练', image: assets + 'ai工具图标/logos/kuaishou.png', mark: 'KL', family: 'kling' },
-    { title: 'LIB TV', scene: '视频灵感、素材拆解与趋势参考', level: '常用', image: assets + 'ai工具图标/logos/libtv.svg', mark: 'L', family: 'libtv' },
+    { title: 'LIB TV', scene: '视频灵感、素材拆解与趋势参考', level: '常用', image: assets + 'ai工具图标/libtv.png', mark: 'L', family: 'libtv' },
   ] },
   { title: '代码类', note: '把创意拆解成可运行、可复用的交付流程', tools: [
-    { title: 'Claude Code', scene: '代码协作、重构与复杂任务推进', level: '熟悉', image: assets + 'ai工具图标/logos/claude.svg', mark: 'CC', family: 'claude' },
-    { title: 'Codex', scene: 'Vibe Coding、页面搭建与流程调试', level: '熟练', image: assets + 'ai工具图标/logos/codex.svg', mark: 'CX', family: 'codex' },
-    { title: 'WorkBuddy', scene: '需求拆解、原型验证与交付协作', level: '常用', image: assets + 'ai工具图标/logos/workbuddy.svg', mark: 'WB', family: 'workbuddy' },
+    { title: 'WorkBuddy', scene: '需求拆解、原型验证与交付协作', level: '常用', image: assets + 'ai工具图标/workdduy.png', mark: 'WB', family: 'workbuddy' },
   ] },
 ]
 const labels = { home: '首页', work: '作品案例', social: '运营内容', motion: '视频创作', systems: '工作流', about: '关于我' }
@@ -136,7 +125,7 @@ function shell(content) {
 }
 function homePage() {
   const featured = data.images.slice(0, 3)
-  return `<section class="hero-section"><div class="hero-copy"><p class="eyebrow"><i></i> AIGC VISUAL DESIGNER / 2026</p><h1>把商品<br /><em>讲成故事。</em></h1><p class="hero-lede">我是唐婧，专注 AIGC 视觉内容创作的视觉设计师。精通生成式图像、动态短视频制作，具备 AI Agent 搭建与自动化内容流水线落地经验。擅长通过标准化 AIGC 工作流，协助品牌把单一产品素材，转化成一套可批量生产、持续复用的品牌传播内容资产，高效完成视觉、短片、角色设定等全链路内容交付。</p><div class="hero-actions"><button class="primary-button" data-route="work">浏览作品 <span>↗</span></button><button class="text-button" data-route="about">了解我的方法 <span>→</span></button></div><div class="hero-stats"><span><strong>4</strong><small>内容方向</small></span><span><strong>25+</strong><small>视觉案例</small></span><span><strong>AI</strong><small>工作流思维</small></span></div></div><div class="hero-visual"><div class="visual-tag">CHARACTER / 01</div><div class="model-stage ${state.resumeOpen ? 'assistant-open' : ''}"><div class="model-halo"></div><model-viewer id="hero-model" src="${assets}syrw3D.glb" alt="唐婧的 AI 角色模型" camera-controls auto-rotate rotation-per-second="10deg" shadow-intensity="1" exposure="1.1" environment-image="neutral" interaction-prompt="auto"></model-viewer></div>${resumeAssistant()}<div class="hero-line"></div></div></section>${marqueeMarkup()}<section class="section-block selected-section"><div class="section-heading"><div><p class="eyebrow">SELECTED WORK / 精选案例</p><h2>从第一眼，到下一次点击。</h2></div><button class="text-button" data-route="work">查看全部案例 <span>↗</span></button></div><div class="selected-grid">${featured.map((item, i) => `<button class="selected-card" data-open="${i}" data-set="images"><img src="${coverFor(item)}" alt="${item.title}" /><span><small>${String(i + 1).padStart(2, '0')} / ${item.type}</small><strong>${item.title}</strong><em>查看案例 ↗</em></span></button>`).join('')}</div></section><section class="statement-band"><p class="eyebrow">WHAT I DO / 我能做什么</p><div class="statement-grid"><h2>让视觉好看，<br /><em>也让业务好用。</em></h2><div class="capability-list"><div><span>01</span><strong>商品视觉</strong><p>详情图、海报、人物与场景，建立一套统一的商品表达。</p></div><div><span>02</span><strong>内容视频</strong><p>电商短视频、特效包装和 AI 漫剧，让内容进入传播场景。</p></div><div><span>03</span><strong>工作流</strong><p>用 Skill 与 Agent 把重复生产变成可复用、可检查的流程。</p></div></div></div></section><section class="section-block process-section"><div class="section-heading"><div><p class="eyebrow">PROCESS / 工作方法</p><h2>从需求到交付，保持每一步可复盘。</h2></div></div><div class="process-grid"><div><span>01</span><strong>理解商品</strong><p>先确认受众、卖点和渠道，再决定视觉语言。</p></div><div><span>02</span><strong>快速成片</strong><p>用 AI 加速探索，把方向尽早变成可讨论的画面。</p></div><div><span>03</span><strong>统一系统</strong><p>沉淀版式、提示词和验收标准，让好结果可持续。</p></div><div><span>04</span><strong>交付复盘</strong><p>记录资产、版本和下一轮优化建议，方便团队接手。</p></div></div></section>`
+  return `<section class="hero-section"><div class="hero-copy"><p class="eyebrow"><i></i> AIGC VISUAL DESIGNER / 2026</p><h1>把商品<br /><em>讲成故事。</em></h1><p class="hero-lede">我是唐婧，专注 AIGC 视觉内容创作的视觉设计师。精通生成式图像、动态短视频制作，具备 AI Agent 搭建与自动化内容流水线落地经验。擅长通过标准化 AIGC 工作流，协助品牌把单一产品素材，转化成一套可批量生产、持续复用的品牌传播内容资产，高效完成视觉、短片、角色设定等全链路内容交付。</p><div class="hero-actions"><button class="primary-button" data-route="work">浏览作品 <span>↗</span></button><button class="text-button" data-route="about">了解我的方法 <span>→</span></button></div><div class="hero-stats"><span><strong>4</strong><small>内容方向</small></span><span><strong>25+</strong><small>视觉案例</small></span><span><strong>AI</strong><small>工作流思维</small></span></div></div><div class="hero-visual"><div class="visual-tag">CHARACTER / 01</div><div class="model-stage ${state.resumeOpen ? 'assistant-open' : ''}"><div class="model-halo"></div><img class="hero-3d-image" src="${assets}角色设计/3D模型类.png" alt="3D 角色设计 · 多角度展示" /></div>${resumeAssistant()}<div class="hero-line"></div></div></section>${marqueeMarkup()}<section class="section-block selected-section"><div class="section-heading"><div><p class="eyebrow">SELECTED WORK / 精选案例</p><h2>从第一眼，到下一次点击。</h2></div><button class="text-button" data-route="work">查看全部案例 <span>↗</span></button></div><div class="selected-grid">${featured.map((item, i) => `<button class="selected-card" data-open="${i}" data-set="images"><img src="${coverFor(item)}" alt="${item.title}" /><span><small>${String(i + 1).padStart(2, '0')} / ${item.type}</small><strong>${item.title}</strong><em>查看案例 ↗</em></span></button>`).join('')}</div></section><section class="statement-band"><p class="eyebrow">WHAT I DO / 我能做什么</p><div class="statement-grid"><h2>让视觉好看，<br /><em>也让业务好用。</em></h2><div class="capability-list"><div><span>01</span><strong>商品视觉</strong><p>详情图、海报、人物与场景，建立一套统一的商品表达。</p></div><div><span>02</span><strong>内容视频</strong><p>电商短视频、特效包装和 AI 漫剧，让内容进入传播场景。</p></div><div><span>03</span><strong>工作流</strong><p>用 Skill 与 Agent 把重复生产变成可复用、可检查的流程。</p></div></div></div></section><section class="section-block process-section"><div class="section-heading"><div><p class="eyebrow">PROCESS / 工作方法</p><h2>从需求到交付，保持每一步可复盘。</h2></div></div><div class="process-grid"><div><span>01</span><strong>理解商品</strong><p>先确认受众、卖点和渠道，再决定视觉语言。</p></div><div><span>02</span><strong>快速成片</strong><p>用 AI 加速探索，把方向尽早变成可讨论的画面。</p></div><div><span>03</span><strong>统一系统</strong><p>沉淀版式、提示词和验收标准，让好结果可持续。</p></div><div><span>04</span><strong>交付复盘</strong><p>记录资产、版本和下一轮优化建议，方便团队接手。</p></div></div></section>`
 }
 function portfolioPage(kind, title, intro, filters) {
   const items = data[kind]; const visible = state.filter === '全部' ? items : items.filter(item => item.type === state.filter)
@@ -147,23 +136,23 @@ function aboutPage() {
 }
 const workflowData = {
   skill: {
-    eyebrow: 'SKILL / 能力封装', title: 'Skill 搭建', count: '12', unit: 'SKILLS', intro: 'Skill 是面向具体设计任务的能力封装：把输入规范、出图策略和质检标准固定下来，让电商内容稳定交付。', flagship: '电商视觉生成 Skill', flagshipNote: '从商品需求进入，到主图、详情图和渠道适配完成的一条可复用链路。', image: assets + 'skill截图示例/ecommerce-visual-skill-preview.png', tags: ['商品详情图', '人物与穿搭', '场景生成', '海报封面', '短视频首帧', '内容文案', '数据复盘', '发布质检', '商品抠图', '风格迁移', '活动节点', '渠道适配'], steps: [['01','需求输入','平台、商品、受众、卖点、比例'],['02','结构化拆解','把卖点拆成画面、文案与构图规则'],['03','生成与质检','统一风格，检查主体、文字和安全边界'],['04','渠道交付','输出详情页、投放图和内容平台版本']], subs: ['商品详情图 Skill','服装穿搭 Skill','人物形象 Skill','电商海报 Skill','场景生成 Skill','短视频首帧 Skill']
+    eyebrow: 'SKILL / 能力封装', title: 'Skill 搭建', count: '12', unit: 'SKILLS', intro: 'Skill 是面向具体设计任务的能力封装：把输入规范、出图策略和质检标准固定下来，让电商内容稳定交付。', flagship: '电商视觉生成 Skill', flagshipNote: '从商品需求进入，到主图、详情图和渠道适配完成的一条可复用链路。', image: assets + '广告设计/服装类/图片节点 1.png', tags: ['商品详情图', '人物与穿搭', '场景生成', '海报封面', '短视频首帧', '内容文案', '数据复盘', '发布质检', '商品抠图', '风格迁移', '活动节点', '渠道适配'], steps: [['01','需求输入','平台、商品、受众、卖点、比例'],['02','结构化拆解','把卖点拆成画面、文案与构图规则'],['03','生成与质检','统一风格，检查主体、文字和安全边界'],['04','渠道交付','输出详情页、投放图和内容平台版本']], subs: ['商品详情图 Skill','服装穿搭 Skill','人物形象 Skill','电商海报 Skill','场景生成 Skill','短视频首帧 Skill']
   },
   agent: {
-    eyebrow: 'AGENT / 业务编排', title: 'Agent 搭建', count: '5', unit: 'AGENTS', intro: 'Agent 是面向业务目标的任务编排：让多个 Skill 按顺序协作，完成选题、生产、审核与复盘，形成可追踪的内容闭环。', flagship: '小红书运营 Agent', flagshipNote: '从选题洞察到发布前检查，串起内容生产、审核和数据复盘。', image: assets + 'Agent示例/xhs-agent-workflow-preview-portrait.png', tags: ['选题洞察', '笔记生成', '视觉配图', '发布质检', '数据复盘'], steps: [['01','业务目标','明确账号定位、栏目与本轮增长任务'],['02','任务路由','按内容类型调用对应的 Skill 组合'],['03','人工审核','保留关键决策点，检查事实和品牌表达'],['04','复盘沉淀','记录版本、表现和下一次可复用的规则']], subs: ['商品内容批量 Agent','达人合作物料 Agent','活动节点内容 Agent','数据复盘 Agent']
+    eyebrow: 'AGENT / 业务编排', title: 'Agent 搭建', count: '5', unit: 'AGENTS', intro: 'Agent 是面向业务目标的任务编排：让多个 Skill 按顺序协作，完成选题、生产、审核与复盘，形成可追踪的内容闭环。', flagship: '小红书运营 Agent', flagshipNote: '从选题洞察到发布前检查，串起内容生产、审核和数据复盘。', image: assets + '小红书运营/小红书首页.jpg', tags: ['选题洞察', '笔记生成', '视觉配图', '发布质检', '数据复盘'], steps: [['01','业务目标','明确账号定位、栏目与本轮增长任务'],['02','任务路由','按内容类型调用对应的 Skill 组合'],['03','人工审核','保留关键决策点，检查事实和品牌表达'],['04','复盘沉淀','记录版本、表现和下一次可复用的规则']], subs: ['商品内容批量 Agent','达人合作物料 Agent','活动节点内容 Agent','数据复盘 Agent']
   },
 }
 const workflowSubcaseData = {
   skill: {
     '商品详情图 Skill': { image: assets + '广告设计/美妆类/01_hero_main.png', scene: '商品详情页 / 长图', note: '把商品卖点拆成首屏、功能和信任信息，形成可复用的详情图结构。', input: '商品资料、卖点、平台比例', process: '卖点分层 → 画面生成 → 文字与主体质检', output: '主图、详情长图、渠道适配版本' },
     '服装穿搭 Skill': { image: assets + '广告设计/服装类/图片节点 1.png', scene: '服饰上新 / 穿搭内容', note: '围绕人物、版型和搭配关系，快速生成统一的服装内容视觉。', input: '款式图、面料、季节与人群', process: '人物设定 → 穿搭组合 → 风格一致性检查', output: '穿搭主视觉、卖点卡片、封面图' },
-    '人物形象 Skill': { image: assets + '人物形象/真人写实类.png', scene: '人物 IP / 品牌角色', note: '先固定人物设定和镜头规则，再扩展不同场景与内容用途。', input: '人物设定、气质关键词、镜头需求', process: '角色设定 → 场景扩展 → 面部与风格检查', output: '人物资产、栏目封面、内容配图' },
+    '人物形象 Skill': { image: assets + '角色设计/真人写实类.png', scene: '人物 IP / 品牌角色', note: '先固定人物设定和镜头规则，再扩展不同场景与内容用途。', input: '人物设定、气质关键词、镜头需求', process: '角色设定 → 场景扩展 → 面部与风格检查', output: '人物资产、栏目封面、内容配图' },
     '电商海报 Skill': { image: assets + '海报封面/商品电商类.png', scene: '活动投放 / 节点传播', note: '把促销信息和商品利益点压缩为第一眼可读的投放画面。', input: '活动机制、商品卖点、投放尺寸', process: '信息排序 → 视觉构图 → 文案与安全区检查', output: '活动海报、投放素材、封面变体' },
     '场景生成 Skill': { image: assets + '广告设计/箱包类设计/图片节点 2.png', scene: '商品空间 / 使用场景', note: '以真实使用情境承接商品功能，让材质和比例更容易被理解。', input: '商品图、空间风格、使用情境', process: '空间搭建 → 商品融合 → 光影与比例检查', output: '场景主图、详情场景、氛围素材' },
     '短视频首帧 Skill': { image: assets + '海报封面/服装电商类.png', scene: '短视频开场 / 信息抓取', note: '为短视频先确定首帧构图、标题和商品焦点，减少后续试错。', input: '视频主题、商品焦点、平台比例', process: '开场钩子 → 画面生成 → 标题与主体检查', output: '首帧画面、标题版式、封面变体' },
   },
   agent: {
-    '商品内容批量 Agent': { image: assets + 'skill截图示例/视觉生成.png', scene: '多 SKU 上新 / 批量生产', note: '将多个商品的资料统一整理，再按渠道批量调用视觉 Skill。', input: '商品清单、卖点表、渠道规则', process: '任务拆分 → Skill 路由 → 批量质检', output: '多 SKU 视觉包、版本清单、交付记录' },
+    '商品内容批量 Agent': { image: assets + '广告设计/美妆类/01_hero_main.png', scene: '多 SKU 上新 / 批量生产', note: '将多个商品的资料统一整理，再按渠道批量调用视觉 Skill。', input: '商品清单、卖点表、渠道规则', process: '任务拆分 → Skill 路由 → 批量质检', output: '多 SKU 视觉包、版本清单、交付记录' },
     '达人合作物料 Agent': { image: assets + '小红书运营/小红书首页.jpg', scene: '达人合作 / 内容共创', note: '把达人 brief、品牌边界和平台规格放进同一条协作流程。', input: '达人 brief、品牌素材、发布时间', process: '需求匹配 → 素材编排 → 人工审核', output: '合作笔记、配图包、发布检查单' },
     '活动节点内容 Agent': { image: assets + '海报封面/商品电商类.png', scene: '大促节点 / 活动传播', note: '围绕节点节奏编排预热、爆发和返场内容，减少临时制作。', input: '节点日历、活动机制、渠道计划', process: '内容排期 → 素材生成 → 节点审核', output: '节点内容包、排期表、渠道版本' },
     '数据复盘 Agent': { image: assets + '小红书运营/小红书数据.jpg', scene: '内容复盘 / 下一轮决策', note: '把平台数据整理成下一轮选题、视觉和发布时间的行动建议。', input: '内容数据、周期目标、历史版本', process: '数据归因 → 问题聚类 → 规则沉淀', output: '复盘摘要、优化清单、可复用规则' },
