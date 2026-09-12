@@ -88,7 +88,7 @@ function routeFromLocation() {
 function routeTo(route) {
   cancelWorkflowRun()
   const paths = { home: './', work: 'images', social: 'xiaohongshu', motion: 'videos', systems: 'skill-agent', about: 'about' }
-  window.history.pushState({}, '', paths[route] || './')
+  window.history.pushState({}, '', new URL(paths[route] || './', document.baseURI).pathname)
   state.route = route; state.filter = '全部'; state.modal = null; state.menu = false; state.resumeOpen = false
   render(); window.scrollTo({ top: 0, behavior: 'smooth' })
 }
@@ -135,7 +135,7 @@ function homeWithTools() {
 }
 function shell(content) {
   document.documentElement.dataset.theme = state.theme
-  root.innerHTML = `<div class="site-shell"><header class="site-header"><a class="brand" href="/" data-route="home"><span class="brand-mark">TJ</span><span><strong>唐婧</strong><small>AIGC VISUAL DESIGN</small></span></a><nav class="main-nav ${state.menu ? 'open' : ''}">${Object.entries(labels).slice(0, 5).map(([key, label]) => `<button class="nav-link ${state.route === key ? 'active' : ''}" data-route="${key}">${label}</button>`).join('')}</nav><div class="header-actions"><button class="icon-button" data-theme-toggle aria-label="切换主题">${state.theme === 'dark' ? '☼' : '◐'}</button><button class="contact-button" data-route="about">联系我 <span>↗</span></button><button class="menu-button" data-menu>${state.menu ? '关闭' : '菜单'}</button></div></header><main>${content}</main><footer class="site-footer"><span>© 2026 唐婧</span><span>AIGC VISUAL / E-COMMERCE CONTENT</span><span>专注商品视觉、内容视频与 AI 工作流</span></footer>${state.modal ? modal(state.modal) : ''}</div>`
+  root.innerHTML = `<div class="site-shell"><header class="site-header"><a class="brand" href="./" data-route="home"><span class="brand-mark">TJ</span><span><strong>唐婧</strong><small>AIGC VISUAL DESIGN</small></span></a><nav class="main-nav ${state.menu ? 'open' : ''}">${Object.entries(labels).slice(0, 5).map(([key, label]) => `<button class="nav-link ${state.route === key ? 'active' : ''}" data-route="${key}">${label}</button>`).join('')}</nav><div class="header-actions"><button class="icon-button" data-theme-toggle aria-label="切换主题">${state.theme === 'dark' ? '☼' : '◐'}</button><button class="contact-button" data-route="about">联系我 <span>↗</span></button><button class="menu-button" data-menu>${state.menu ? '关闭' : '菜单'}</button></div></header><main>${content}</main><footer class="site-footer"><span>© 2026 唐婧</span><span>AIGC VISUAL / E-COMMERCE CONTENT</span><span>专注商品视觉、内容视频与 AI 工作流</span></footer>${state.modal ? modal(state.modal) : ''}</div>`
   bindEvents()
 }
 function homePage() {

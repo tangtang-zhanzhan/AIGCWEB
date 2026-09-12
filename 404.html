@@ -5,10 +5,10 @@
   <title>跳转中…</title>
   <script>
     var segments = window.location.pathname.split('/').filter(Boolean)
-    segments.pop()
-    window.location.replace(segments.join('/') + '/')
+    var home = segments[0] || ''
+    window.location.replace('/' + home + '/')
   </script>
-  <meta http-equiv="refresh" content="0;url=./">
+  <meta http-equiv="refresh" content="0;url=/AIGCWEB/">
 </head>
 <body>
   <p>页面跳转中…</p>
