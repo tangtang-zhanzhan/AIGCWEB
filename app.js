@@ -38,16 +38,23 @@ const data = {
 }
 const toolCategories = [
   { title: '图像类', note: '商品视觉、人物设定与多模态探索', tools: [
-    { title: 'Midjourney', scene: '风格参考、构图探索与视觉实验', level: '熟悉', image: assets + 'ai工具图标/MJ.png', mark: 'MJ', family: 'mj' },
-    { title: '即梦 AI', scene: '灵感出图与视频素材生成', level: '常用', image: assets + 'ai工具图标/jimeng.png', mark: 'JM', family: 'jimeng' },
-    { title: 'ChatGPT', scene: '对话、文案与创作细节打磨', level: '常用', image: assets + 'ai工具图标/chatgpt.png', mark: 'GPT', family: 'chatgpt' },
-    { title: '豆包', scene: '快捷出图与日常创作助手', level: '常用', image: assets + 'ai工具图标/豆包.png', mark: 'DB', family: 'doubao' },
+    { title: 'Nano Banana 2', scene: '商品主视觉、人物与场景生成', level: '熟练', image: assets + 'ai工具图标/logos/nano-banana.svg', mark: 'NB2', family: 'nano' },
+    { title: 'Nano Banana Pro', scene: '高质感商业图、细节修图与变体', level: '熟悉', image: assets + 'ai工具图标/logos/nano-banana.svg', mark: 'NBP', family: 'nano' },
+    { title: 'GPT Image 2 系列', scene: '文字排版、商品变体与精修', level: '熟悉', image: assets + 'ai工具图标/generated/openai-logo-tile.png', family: 'gpt-image' },
+    { title: 'Midjourney', scene: '风格参考、构图探索与视觉实验', level: '熟悉', image: assets + 'ai工具图标/logos/midjourney.svg', mark: 'MJ', family: 'mj' },
+    { title: '即梦 AI', scene: '灵感出图与视频素材生成', level: '常用', image: assets + 'ai工具图标/logos/jimeng.png', mark: 'JM', family: 'jimeng' },
+    { title: 'ChatGPT', scene: '对话、文案与创作细节打磨', level: '常用', image: assets + 'ai工具图标/logos/chatgpt.svg', mark: 'GPT', family: 'chatgpt' },
+    { title: '豆包', scene: '快捷出图与日常创作助手', level: '常用', image: assets + 'ai工具图标/logos/doubao.png', mark: 'DB', family: 'doubao' },
   ] },
   { title: '视频类', note: '动态广告、短视频首帧与素材灵感', tools: [
-    { title: 'LIB TV', scene: '视频灵感、素材拆解与趋势参考', level: '常用', image: assets + 'ai工具图标/libtv.png', mark: 'L', family: 'libtv' },
+    { title: 'Seedance / 商品广告', scene: '商品镜头、动态展示与广告片', level: '熟练', image: assets + 'ai工具图标/logos/bytedance.svg', mark: 'SD', family: 'seedance' },
+    { title: 'Kling 系列', scene: '人物动作、产品动态与镜头控制', level: '熟练', image: assets + 'ai工具图标/logos/kuaishou.png', mark: 'KL', family: 'kling' },
+    { title: 'LIB TV', scene: '视频灵感、素材拆解与趋势参考', level: '常用', image: assets + 'ai工具图标/logos/libtv.svg', mark: 'L', family: 'libtv' },
   ] },
   { title: '代码类', note: '把创意拆解成可运行、可复用的交付流程', tools: [
-    { title: 'WorkBuddy', scene: '需求拆解、原型验证与交付协作', level: '常用', image: assets + 'ai工具图标/workdduy.png', mark: 'WB', family: 'workbuddy' },
+    { title: 'Claude Code', scene: '代码协作、重构与复杂任务推进', level: '熟悉', image: assets + 'ai工具图标/logos/claude.svg', mark: 'CC', family: 'claude' },
+    { title: 'Codex', scene: 'Vibe Coding、页面搭建与流程调试', level: '熟练', image: assets + 'ai工具图标/logos/codex.svg', mark: 'CX', family: 'codex' },
+    { title: 'WorkBuddy', scene: '需求拆解、原型验证与交付协作', level: '常用', image: assets + 'ai工具图标/logos/workbuddy.svg', mark: 'WB', family: 'workbuddy' },
   ] },
 ]
 const labels = { home: '首页', work: '作品案例', social: '运营内容', motion: '视频创作', systems: '工作流', about: '关于我' }
