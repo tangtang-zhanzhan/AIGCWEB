@@ -65,7 +65,7 @@ const toolCategories = [
     { title: 'WorkBuddy', scene: '需求拆解、原型验证与交付协作', level: '常用', image: assets + 'ai工具图标/logos/workbuddy.svg', mark: 'WB', family: 'workbuddy' },
   ] },
 ]
-const labels = { home: '首页', work: '作品案例', social: '运营内容', motion: '视频创作', systems: '工作流', about: '关于我' }
+const labels = { home: '首页', work: '图像创作', social: '运营内容', motion: '视频创作', systems: '工作流', about: '关于我' }
 const resumeAnswers = [
   { keys: ['擅长', '能力', '技能'], answer: '我专注商品视觉、AIGC 短视频和内容工作流，把一个商品拆成可传播的图像、视频与交付流程。' },
   { keys: ['项目', '代表', '案例'], answer: '代表案例是电商视觉生成 Skill 与小红书运营 Agent，前者负责从商品 brief 到多渠道素材，后者串起选题、生产、审核与复盘。' },
