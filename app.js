@@ -2,29 +2,21 @@ const root = document.querySelector('#root')
 const assets = 'portfolio/'
 const data = {
   images: [
-    { title: '服装商品详情', type: '广告设计', folder: '广告设计/服装类', note: '为服饰梳理版式、卖点与内容节奏，输出成套详情视觉。', gallery: [assets + '广告设计/服装类/图片节点 1.webp', assets + '广告设计/服装类/图片节点 1(1).webp', assets + '广告设计/服装类/图片节点 2.webp', assets + '广告设计/服装类/图片节点 4.webp', assets + '广告设计/服装类/图片节点 5.webp', assets + '广告设计/服装类/图片节点 6.webp'] },
-    { title: '箱包商品详情', type: '广告设计', folder: '广告设计/箱包类设计', note: '把箱包的功能卖点拆成可读的详情结构与视觉层级。', gallery: [assets + '广告设计/箱包类设计/图片节点 1.webp', assets + '广告设计/箱包类设计/图片节点 2.webp', assets + '广告设计/箱包类设计/图片节点 3.webp', assets + '广告设计/箱包类设计/图片节点 4.webp', assets + '广告设计/箱包类设计/图片节点 5.webp', assets + '广告设计/箱包类设计/图片节点 6.webp'] },
-    { title: '美妆商品详情', type: '广告设计', folder: '广告设计/美妆类', note: '从质地、肤感到卖点画面，完成统一的美妆详情视觉。', gallery: [assets + '广告设计/美妆类/01_hero_main.webp', assets + '广告设计/美妆类/02_selling_deep_clean.webp', assets + '广告设计/美妆类/03_selling_watery.webp', assets + '广告设计/美妆类/05_selling_eyes_lips.webp', assets + '广告设计/美妆类/06_selling_sensitive.webp', assets + '广告设计/美妆类/14_mood_refresh.webp'] },
-    { title: 'IP系列', type: '广告设计', folder: '广告设计/IP系列', note: '从角色设定到周边延展的完整 IP 系列视觉。', gallery: [assets + '广告设计/IP系列/三视图.webp', assets + '广告设计/IP系列/主视觉.webp', assets + '广告设计/IP系列/全套12+1.webp', assets + '广告设计/IP系列/周边延展.webp', assets + '广告设计/IP系列/日用小物.webp', assets + '广告设计/IP系列/服饰周边.webp', assets + '广告设计/IP系列/玩偶实物摆拍.webp', assets + '广告设计/IP系列/盲盒包装.webp', assets + '广告设计/IP系列/礼盒+门头.webp', assets + '广告设计/IP系列/色彩规范.webp'] },
-    { title: '婚礼空间场景', type: '广告设计', folder: '广告设计/空间设计', note: '为宴会与婚礼场景提供氛围与场景设计参考。', gallery: [assets + '广告设计/空间设计/中式婚礼.webp', assets + '广告设计/空间设计/婚礼场景设计.webp'] },
-    { title: '商品电商海报', type: '海报封面', image: assets + '海报封面/商品电商类.webp', note: '将商品利益点转译为适合投放的第一眼画面。' },
-    { title: 'AI海报', type: '海报封面', image: assets + '海报封面/AI海报.webp', note: '以 AI 生成方式完成的一张可投放海报。' },
-    { title: '节目主视觉', type: '海报封面', image: assets + '海报封面/主视觉tv.webp', note: '为栏目或活动建立统一的主视觉画面。' },
-    { title: '会议主视觉', type: '海报封面', image: assets + '海报封面/会议主视觉KV.webp', note: '把会议主题、信息层级与视觉氛围整合成 KV 画面。' },
-    { title: '节气海报', type: '海报封面', image: assets + '海报封面/节气.webp', note: '以节气为节点生成的应景海报。' },
-    { title: '节日海报', type: '海报封面', image: assets + '海报封面/节日海报.webp', note: '把节日氛围、活动信息与商品卖点放进一张可投放的画面。' },
-    { title: '卡通海报', type: '海报封面', image: assets + '海报封面/卡通海报类.webp', note: '用卡通造型完成轻松、有辨识度的海报表达。' },
-    { title: '真人写实类', type: '人物形象', image: assets + '角色设计/真人写实类.webp', note: '为个人 IP 与内容栏目建立稳定的形象资产。' },
-    { title: '古风写实类', type: '人物形象', image: assets + '角色设计/古风写实类.webp', note: '从风格设定到成片输出的视觉探索。' },
-    { title: '真人意境类', type: '人物形象', image: assets + '角色设计/真人意境类.webp', note: '用氛围与叙事服务人物内容。' },
-    { title: '插画类古风', type: '人物形象', image: assets + '角色设计/插画类古风.webp', note: '用插画语言重塑古风人物，探索风格化表达。' },
-    { title: '3D模型类', type: '人物形象', image: assets + '角色设计/3D模型类.webp', note: '从平面转向 3D 造型，建立可多角度展示的角色形象。' },
-    { title: '男主（周铭）', type: '人物形象', image: assets + '角色设计/男主（周铭）.webp', note: '围绕故事人物完成角色设定与形象延展。' },
-    { title: '人物形象 01', type: '人物形象', image: assets + '角色设计/1.webp', note: '人物形象的基础设定与统一视觉参考。' },
-    { title: '古装女主', type: '人物形象', image: assets + '角色设计/古装女主.webp', note: '古装向女主角色形象设定。' },
-    { title: '古装男主', type: '人物形象', image: assets + '角色设计/古装男主.webp', note: '古装向男主角色形象设定。' },
-    { title: '现代男主', type: '人物形象', image: assets + '角色设计/现代男主.webp', note: '现代向男主角色形象设定。' },
-    { title: '都市女主', type: '人物形象', image: assets + '角色设计/都市女主.webp', note: '都市向女主角色形象设定。' },
+    {"title":"小雀斑卷毛家族IP系列","type":"广告设计","folder":"广告设计/IP系列","group":"广告设计","gallery":["portfolio/广告设计/IP系列/服饰周边.webp","portfolio/广告设计/IP系列/礼盒+门头.webp","portfolio/广告设计/IP系列/盲盒包装.webp","portfolio/广告设计/IP系列/全套12+1.webp","portfolio/广告设计/IP系列/日用小物.webp","portfolio/广告设计/IP系列/三视图.webp","portfolio/广告设计/IP系列/色彩规范.webp","portfolio/广告设计/IP系列/玩偶实物摆拍.webp","portfolio/广告设计/IP系列/周边延展.webp","portfolio/广告设计/IP系列/主视觉.webp"]},
+    {"title":"服装系列","type":"广告设计","folder":"广告设计/服装系列","group":"广告设计","gallery":["portfolio/广告设计/服装系列/尺寸.webp","portfolio/广告设计/服装系列/穿搭.webp","portfolio/广告设计/服装系列/海报.webp","portfolio/广告设计/服装系列/模特.webp","portfolio/广告设计/服装系列/首图.webp","portfolio/广告设计/服装系列/细节.webp"]},
+    {"title":"空间设计系列","type":"广告设计","folder":"广告设计/空间设计系列","group":"广告设计","gallery":["portfolio/广告设计/空间设计系列/白绿森系.webp","portfolio/广告设计/空间设计系列/槟轻奢水晶.webp","portfolio/广告设计/空间设计系列/粉杏温柔韩系.webp","portfolio/广告设计/空间设计系列/复古红金法式.webp","portfolio/广告设计/空间设计系列/蓝调极简海洋风.webp","portfolio/广告设计/空间设计系列/中式婚礼.webp"]},
+    {"title":"美妆系列","type":"广告设计","folder":"广告设计/美妆系列","group":"广告设计","gallery":["portfolio/广告设计/美妆系列/材质.webp","portfolio/广告设计/美妆系列/模特.webp","portfolio/广告设计/美妆系列/深层卸妆.webp","portfolio/广告设计/美妆系列/首图.webp","portfolio/广告设计/美妆系列/温和不刺激.webp","portfolio/广告设计/美妆系列/眼唇可卸.webp"]},
+    {"title":"箱包系列","type":"广告设计","folder":"广告设计/箱包类系列","group":"广告设计","gallery":["portfolio/广告设计/箱包类系列/材料图.webp","portfolio/广告设计/箱包类系列/场景图.webp","portfolio/广告设计/箱包类系列/色系图.webp","portfolio/广告设计/箱包类系列/首图.webp","portfolio/广告设计/箱包类系列/细节图.webp","portfolio/广告设计/箱包类系列/细节图2.webp"]},
+    {"title":"电商海报系列","type":"海报设计","folder":"海报封面/电商海报系列","group":"海报设计","gallery":["portfolio/海报封面/电商海报系列/潮搭.webp","portfolio/海报封面/电商海报系列/海盐.webp","portfolio/海报封面/电商海报系列/蜜桃.webp","portfolio/海报封面/电商海报系列/清爽度假风.webp","portfolio/海报封面/电商海报系列/甜美花园风.webp","portfolio/海报封面/电商海报系列/温柔.webp","portfolio/海报封面/电商海报系列/温柔通勤风.webp","portfolio/海报封面/电商海报系列/休闲城市风.webp"]},
+    {"title":"餐饮宣传海报系列","type":"海报设计","folder":"海报封面/店铺海报系列","group":"海报设计","gallery":["portfolio/海报封面/店铺海报系列/咖啡.webp","portfolio/海报封面/店铺海报系列/奶茶.webp","portfolio/海报封面/店铺海报系列/牛排.webp","portfolio/海报封面/店铺海报系列/披萨.webp","portfolio/海报封面/店铺海报系列/气泡水.webp"]},
+    {"title":"古蜀文明东方美学系列","type":"海报设计","folder":"海报封面/古蜀文明系列","group":"海报设计","gallery":["portfolio/海报封面/古蜀文明系列/东方美学海报设计.webp","portfolio/海报封面/古蜀文明系列/金沙美学海报设计.webp","portfolio/海报封面/古蜀文明系列/山川美学海报设计.webp","portfolio/海报封面/古蜀文明系列/石刻美学海报设计.webp","portfolio/海报封面/古蜀文明系列/蜀锦美学海报设计.webp"]},
+    {"title":"深蓝共振・航空数智化专题系列 KV","type":"海报设计","folder":"海报封面/会议主视觉系列","group":"海报设计","gallery":["portfolio/海报封面/会议主视觉系列/场景焕新.webp","portfolio/海报封面/会议主视觉系列/会议主题.webp","portfolio/海报封面/会议主视觉系列/数联全域.webp","portfolio/海报封面/会议主视觉系列/协同化.webp","portfolio/海报封面/会议主视觉系列/智造改革.webp","portfolio/海报封面/会议主视觉系列/AI海报.webp"]},
+    {"title":"节日海报系列","type":"海报设计","folder":"海报封面/节日海报系列","group":"海报设计","gallery":["portfolio/海报封面/节日海报系列/春节.webp","portfolio/海报封面/节日海报系列/端午.webp","portfolio/海报封面/节日海报系列/国庆.webp","portfolio/海报封面/节日海报系列/节气.webp","portfolio/海报封面/节日海报系列/劳动.webp","portfolio/海报封面/节日海报系列/七夕.webp","portfolio/海报封面/节日海报系列/清明.webp","portfolio/海报封面/节日海报系列/元旦.webp","portfolio/海报封面/节日海报系列/元宵.webp","portfolio/海报封面/节日海报系列/中秋.webp"]},
+    {"title":"3D模型系列","type":"角色设计","folder":"角色设计/3D模型系列","group":"角色设计","gallery":["portfolio/角色设计/3D模型系列/顾西辞.webp","portfolio/角色设计/3D模型系列/沈岚枫.webp","portfolio/角色设计/3D模型系列/沈梦溪.webp","portfolio/角色设计/3D模型系列/谢知意.webp"]},
+    {"title":"古装系列","type":"角色设计","folder":"角色设计/古装仙侠系列","group":"角色设计","gallery":["portfolio/角色设计/古装仙侠系列/白薇霜.webp","portfolio/角色设计/古装仙侠系列/傅擎洲.webp","portfolio/角色设计/古装仙侠系列/傅砚舟.webp","portfolio/角色设计/古装仙侠系列/姜雾栖.webp","portfolio/角色设计/古装仙侠系列/谢无咎.webp"]},
+    {"title":"国风仙侠插画系列","type":"角色设计","folder":"角色设计/国风插画系列","group":"角色设计","gallery":["portfolio/角色设计/国风插画系列/男二.webp","portfolio/角色设计/国风插画系列/男主.webp","portfolio/角色设计/国风插画系列/女二.webp","portfolio/角色设计/国风插画系列/女主.webp"]},
+    {"title":"校园系列","type":"角色设计","folder":"角色设计/青春校园系列","group":"角色设计","gallery":["portfolio/角色设计/青春校园系列/程皓宇.webp","portfolio/角色设计/青春校园系列/江叙.webp","portfolio/角色设计/青春校园系列/林景川.webp","portfolio/角色设计/青春校园系列/苏婉晴.webp","portfolio/角色设计/青春校园系列/许年年.webp"]},
+    {"title":"沈氏继承者","type":"角色设计","folder":"角色设计/现代都市系列","group":"角色设计","gallery":["portfolio/角色设计/现代都市系列/霍景深.webp","portfolio/角色设计/现代都市系列/林婉怡.webp","portfolio/角色设计/现代都市系列/沈振庭.webp","portfolio/角色设计/现代都市系列/沈知意.webp"]},
   ],
   social: [
     { title: '小红书主页搭建', type: '多平台运营', image: assets + '小红书运营/小红书首页.webp', note: '把账号定位、栏目结构和封面规则变成可执行的主页。' },
@@ -44,6 +36,26 @@ const data = {
   ],
   systems: [],
 }
+const projectIntros = {
+  "小雀斑卷毛家族IP系列": "《小雀斑卷毛家族IP系列》，本项目为 IP 形象「小雀斑卷毛家族」潮玩盲盒全案设计。项目围绕原创卡通家族角色，完成 IP 形象塑造、角色三视图、色彩规范、盲盒产品设计、实体玩偶效果渲染，并进行多品类衍生周边开发。设计内容包含：IP 主视觉、角色三视图、色彩规范、盲盒包装、潮玩展柜门头、全套 12+1 角色套装展示，同时拓展服饰、帆布袋、马克杯、手机壳等日用周边产品。整套方案兼顾潮玩产品落地性与商业延展能力，适用于潮玩发售、线下门店、文创周边售卖，完整覆盖从 IP 基础设定到产品商业化应用的全流程设计。",
+  "服装系列": "《服装系列》，本项目为复古秋日女装电商详情页视觉设计，围绕秋冬针织毛衣套装打造整套电商页面素材。包含产品首图、宣传海报、模特展示图、穿搭示范、面料细节图与尺码参数表。整体采用暖棕复古色调，柔和简约的版式风格，突出服装面料质感与穿搭氛围感，完整覆盖电商商品从引流主图到详情信息说明的全链路视觉内容，适配淘宝、小红书等电商与社交平台服装展示。",
+  "空间设计系列": "《空间设计系列》：本系列为多风格婚礼宴会厅室内设计提案，共包含 6 套差异化主题方案：白绿森系、香槟轻奢水晶、粉杏温柔韩系、复古红金法式、蓝调极简海洋风、传统中式婚礼。每套展板统一版式，整合空间效果图、平面布局、材质样板、色彩搭配与细部构造分析，从空间规划、氛围营造到材料落地进行完整设计推演。项目覆盖现代轻奢、自然森系、古典法式、新中式等主流婚礼审美，探索不同风格下仪式感空间的营造方式，可用于婚礼堂前期方案汇报与设计落地参考",
+  "美妆系列": "《美妆系列》：本项目为卸妆油产品电商详情视觉设计，围绕产品核心卖点进行系列画面创作。包含商品主视觉海报、卖点宣传图（深层卸妆、水感清爽、眼唇可用、敏感肌友好）、模特上脸使用场景图与氛围形象图。整体采用清新自然的视觉风格，以植物、水元素烘托产品温和、水润的特质，直观传递卸妆力强、清爽不油腻、敏肌适用的产品优势，完整搭建电商商品详情页全链路视觉素材，适配电商平台商品展示与种草传播。",
+  "箱包系列": "《箱包系列》：本项目为 Reebok 机能旅行双肩包电商详情视觉设计。整套视觉包含商品首图、户外出行场景图、多色系展示图、面料工艺细节图、内部收纳结构与产品参数介绍图。采用简约硬朗的工业风版式，突出背包防水耐磨、大容量、可登机、适配 18 寸电脑等核心卖点，直观展示外观造型、面料质感、拉链车缝细节与内部收纳空间，完成电商商品从主图引流到产品细节讲解的全套视觉物料，适配电商平台商品详情展示。",
+  "古蜀文明东方美学系列": "《古蜀文明东方美学系列》，一套横向宽幅新中式展览视觉海报。以柔焦薄雾、低饱和青灰渐变统一视觉基底，分别提取三星堆青铜神树、金沙太阳神鸟、川山都江堰、巴蜀石窟石刻、蜀锦织造五大川蜀文化符号，虚化剪影融入朦胧白雾，采用统一文字排版体系，打造博物馆质感系列主视觉，整套视觉语言统一，用于文明传承主题展览。",
+  "深蓝共振・航空数智化专题系列 KV": "《深蓝共振・航空数智化专题系列 KV》，独立完成政企航空数字化会议系列主视觉设计，产出 4 张 16:9 宽幅科技 KV 海报。统一深蓝全息粒子科技视觉体系，围绕智能制造、业务场景升级、跨域数据协同等四大业务主题，定制对应背景符号与文案版式；采用 AI 生成背景氛围素材，后期整合排版，输出可直接落地的会议背景板物料，整套视觉风格统一，满足线下专题会议全场景宣传使用。",
+  "餐饮宣传海报系列": "《餐饮宣传海报系列》，用于门店展示、社交平台及外卖平台推广。提取潮流拼贴视觉风格，统一版式、装饰元素与色彩体系，依次制作气泡特调、牛排、披萨、咖啡、奶茶 5 款产品海报。画面采用褶皱纸底、粗体标题、手绘几何装饰，突出美食视觉吸引力，面向 18-35 岁年轻打卡群体。成品移除多余署名文字，可直接商用，整套海报风格统一，强化门店视觉记忆点，提升产品引流效果。",
+  "节日海报系列": "《节日海报系列》「岁时记」全年国风节日海报系列，针对品牌节日物料风格零散、复用率低的痛点，打造统一视觉体系。以新中式水墨国风为基底，建立 \"双字书法 + 单印章 + 满版场景\" 标准化版式，批量产出竖版节日海报，覆盖全年 12 + 核心节日，适配新媒体、社群、朋友圈多场景传播，形成可复用的品牌节日视觉资产。",
+  "电商海报系列": "《电商海报系列》为女装 618 大促视觉设计项目，包含营销主题海报与实景穿搭人像写真两大板块。项目围绕多风格女装产品线，打造潮搭、海盐夏日、蜜桃甜系等营销海报，同时创作度假、花园、通勤、城市休闲四类穿搭人像。兼顾电商促销信息传达与服装上身氛围感种草，统一人像拍摄质感，适配电商首页、商品主图、社交平台推广等多场景使用。",
+  "国风仙侠插画系列": "《国风仙侠插画系列》，共 4 张核心角色图。整套作品统一清新国风插画质感，为 4 位主角分别设计专属造型、道具与场景，利用色彩、服饰、环境区分人物性格与身份。作品用于网文 IP 人物宣传与角色设定，塑造具有故事感的仙侠群像，视觉风格统一，氛围感强烈。",
+  "3D模型系列": "《3D模型系列》，共 4 张商业棚拍人像。以纯白影棚为背景，冰蓝银灰为主色调，塑造宴会高级感。分别设计女主、精致贵气男主、温润男二、清冷女配，统一竖版全身构图，着重表现高定礼服质感与人物性格，适用于礼服品牌画册与形象宣传。",
+  "沈氏继承者": "《沈氏继承者》都市豪门 IP 角色设定展板，共 4 张角色设定表。统一黑金轻奢版式，包含人物档案、三视图、服饰与饰品拆解、发型、多情绪表情板块，完整塑造豪门家族群像，用于短剧 IP 人物可视化，可直接用于形象参考与视觉落地。",
+  "校园系列": "《校园系列》本项目为校园故事角色设定集，共完成 5 位主角完整人物视觉档案。每张设定展板包含角色全身立绘、多角度头像、表情集、穿搭服饰、配饰道具与人物基础信息，统一采用清新校园胶片质感风格，区分不同人物性格与气质。",
+  "古装系列": "《古装系列》：本项目为古风仙侠题材角色设定集，共 5 位核心人物完整视觉设定展板。每张设定稿包含角色主形象、多套服饰方案、配饰武器、色卡、多角度头像、表情参考以及场景氛围小样，采用水墨国风质感，区分人物身份、性格与阵营。"
+};
+function introFor(item) {
+  return (item && projectIntros[item.title]) || ''
+}
 const toolCategories = [
   { title: '图像类', note: '商品视觉、人物设定与多模态探索', tools: [
     { title: 'Nano Banana 2', scene: '商品主视觉、人物与场景生成', level: '熟练', image: assets + 'ai工具图标/logos/nano-banana.svg', mark: 'NB2', family: 'nano' },
@@ -56,7 +68,7 @@ const toolCategories = [
   ] },
   { title: '视频类', note: '动态广告、短视频首帧与素材灵感', tools: [
     { title: 'Seedance / 商品广告', scene: '商品镜头、动态展示与广告片', level: '熟练', image: assets + 'ai工具图标/logos/bytedance.svg', mark: 'SD', family: 'seedance' },
-    { title: 'Kling 系列', scene: '人物动作、产品动态与镜头控制', level: '熟练', image: assets + 'ai工具图标/logos/kuaishou.png', mark: 'KL', family: 'kling' },
+    { title: 'Kling 系列', scene: '人物动作、产品动态与镜头控制', level: '熟练', image: assets + 'ai工具图标/logos/kuaishou.webp', mark: 'KL', family: 'kling' },
     { title: 'LIB TV', scene: '视频灵感、素材拆解与趋势参考', level: '常用', image: assets + 'ai工具图标/logos/libtv.svg', mark: 'L', family: 'libtv' },
   ] },
   { title: '代码类', note: '把创意拆解成可运行、可复用的交付流程', tools: [
@@ -73,7 +85,7 @@ const resumeAnswers = [
   { keys: ['工作方式', '流程', '怎么做'], answer: '先确认商品、受众和渠道，再快速成片、统一视觉系统，最后质检、交付并复盘。' },
   { keys: ['经历', '背景', '前端'], answer: '我的背景横跨前端开发与 AIGC 内容创作，擅长把创意拆成可运行、可复用、可检查的工作流。' },
 ]
-const state = { route: routeFromLocation(), filter: '全部', theme: localStorage.getItem('portfolio-theme') || 'light', modal: null, menu: false, workflow: 'skill', workflowStep: 0, workflowRun: { mode: null, status: 'idle', step: -1, input: '', output: null }, workflowRunId: 0, workflowTimer: null, resumeAnswer: '', resumeOpen: false }
+const state = { route: routeFromLocation(), filter: '全部', group: null, theme: localStorage.getItem('portfolio-theme') || 'light', modal: null, lightbox: null, menu: false, workflow: 'skill', workflowStep: 0, workflowRun: { mode: null, status: 'idle', step: -1, input: '', output: null }, workflowRunId: 0, workflowTimer: null, resumeAnswer: '', resumeOpen: false }
 
 function routeFromLocation() {
   const segments = window.location.pathname.split('/').filter(Boolean)
@@ -89,7 +101,7 @@ function routeTo(route) {
   cancelWorkflowRun()
   const paths = { home: './', work: 'images', social: 'xiaohongshu', motion: 'videos', systems: 'skill-agent', about: 'about' }
   window.history.pushState({}, '', new URL(paths[route] || './', document.baseURI).pathname)
-  state.route = route; state.filter = '全部'; state.modal = null; state.menu = false; state.resumeOpen = false
+  state.route = route; state.filter = '全部'; state.group = null; state.modal = null; state.menu = false; state.resumeOpen = false
   render(); window.scrollTo({ top: 0, behavior: 'smooth' })
 }
 function coverFor(item) { return (item.gallery && item.gallery[0]) || item.image }
@@ -106,8 +118,7 @@ function galleryLayout(count) {
   return { cols, rows: Math.ceil(count / cols), hero: false }
 }
 function galleryMarkup(item) {
-  const { cols, rows, hero } = galleryLayout(item.gallery.length)
-  return `<div class="modal-gallery${hero ? ' has-hero' : ''}" style="grid-template-columns:repeat(${cols},minmax(0,1fr));grid-template-rows:repeat(${rows},minmax(0,1fr))">${item.gallery.map((src, index) => `<figure class="modal-gallery-item${hero && index === 0 ? ' is-hero' : ''}"><img src="${src}" alt="${item.title} ${String(index + 1).padStart(2, '0')}" loading="lazy" decoding="async" /><figcaption>${String(index + 1).padStart(2, '0')} / ${String(item.gallery.length).padStart(2, '0')}</figcaption></figure>`).join('')}</div>`
+  return `<div class="modal-gallery-list">${item.gallery.map((src, index) => `<figure class="modal-gallery-item" data-zoom><img class="zoomable" src="${src}" alt="${item.title} ${String(index + 1).padStart(2, '0')}" loading="lazy" decoding="async" /><figcaption>${String(index + 1).padStart(2, '0')} / ${String(item.gallery.length).padStart(2, '0')}</figcaption></figure>`).join('')}</div>`
 }
 function answerResumeQuestion(query) {
   const normalized = query.trim().toLowerCase()
@@ -135,7 +146,7 @@ function homeWithTools() {
 }
 function shell(content) {
   document.documentElement.dataset.theme = state.theme
-  root.innerHTML = `<div class="site-shell"><header class="site-header"><a class="brand" href="./" data-route="home"><span class="brand-mark">TJ</span><span><strong>唐婧</strong><small>AIGC VISUAL DESIGN</small></span></a><nav class="main-nav ${state.menu ? 'open' : ''}">${Object.entries(labels).filter(([key]) => key !== 'social').slice(0, 4).map(([key, label]) => `<button class="nav-link ${state.route === key ? 'active' : ''}" data-route="${key}">${label}</button>`).join('')}</nav><div class="header-actions"><button class="icon-button" data-theme-toggle aria-label="切换主题">${state.theme === 'dark' ? '☼' : '◐'}</button><button class="contact-button" data-route="about">联系我 <span>↗</span></button><button class="menu-button" data-menu>${state.menu ? '关闭' : '菜单'}</button></div></header><main>${content}</main><footer class="site-footer"><span>© 2026 唐婧</span><span>AIGC VISUAL / E-COMMERCE CONTENT</span><span>专注商品视觉、内容视频与 AI 工作流</span></footer>${state.modal ? modal(state.modal) : ''}</div>`
+  root.innerHTML = `<div class="site-shell"><header class="site-header"><a class="brand" href="./" data-route="home"><span class="brand-mark">TJ</span><span><strong>唐婧</strong><small>AIGC VISUAL DESIGN</small></span></a><nav class="main-nav ${state.menu ? 'open' : ''}">${Object.entries(labels).filter(([key]) => key !== 'social').slice(0, 4).map(([key, label]) => `<button class="nav-link ${state.route === key ? 'active' : ''}" data-route="${key}">${label}</button>`).join('')}</nav><div class="header-actions"><button class="icon-button" data-theme-toggle aria-label="切换主题">${state.theme === 'dark' ? '☼' : '◐'}</button><button class="contact-button" data-route="about">联系我 <span>↗</span></button><button class="menu-button" data-menu>${state.menu ? '关闭' : '菜单'}</button></div></header><main>${content}</main><footer class="site-footer"><span>© 2026 唐婧</span><span>AIGC VISUAL / E-COMMERCE CONTENT</span><span>专注商品视觉、内容视频与 AI 工作流</span></footer>${state.modal ? modal(state.modal) : ''}</div>${state.lightbox ? imageLightbox(state.lightbox) : ''}`
   bindEvents()
 }
 function homePage() {
@@ -146,12 +157,31 @@ function portfolioPage(kind, title, intro, filters) {
   const items = data[kind]; const visible = state.filter === '全部' ? items : items.filter(item => item.type === state.filter)
   return `<section class="page-intro"><p class="eyebrow">${kind === 'images' ? 'IMAGE / 图像创作' : kind === 'social' ? 'SOCIAL / 多平台运营' : kind === 'motion' ? 'MOTION / 视频创作' : 'SYSTEM / 智能体创作'}</p><h1>${title}</h1><p>${intro}</p></section><section class="portfolio-controls"><div class="filter-row">${filters.map(filter => `<button class="filter-button ${state.filter === filter ? 'active' : ''}" data-filter="${filter}">${filter}</button>`).join('')}</div><span class="result-count">${visible.length} CASES</span></section><section class="work-grid ${kind === 'motion' ? 'motion-grid' : ''}">${visible.map(item => workCard(item, items.indexOf(item), kind)).join('')}</section>`
 }
+const workCategories = [
+  { name: '广告设计', eyebrow: 'COMMERCIAL DESIGN', note: '电商详情、IP 与空间视觉' },
+  { name: '海报设计', eyebrow: 'POSTER DESIGN', note: '节日、活动与品牌海报' },
+  { name: '角色设计', eyebrow: 'CHARACTER DESIGN', note: '人物 IP 与系列角色设定' },
+]
+function workImagesPage() {
+  if (!state.group) {
+    const catCards = workCategories.map(cat => {
+      const series = data.images.filter(item => item.group === cat.name)
+      const cover = series[0]?.gallery[0]
+      return `<button class="category-card" data-group="${cat.name}"><span class="category-media"><img src="${cover}" alt="${cat.name}" loading="lazy" decoding="async" /><span class="category-count">${String(series.length).padStart(2, '0')} 系列</span></span><span class="category-copy"><small>${cat.eyebrow}</small><strong>${cat.name}</strong><em>进入作品 ↗</em></span></button>`
+    }).join('')
+    return `<section class="page-intro"><p class="eyebrow">IMAGE / 图像创作</p><h1>商品与品牌视觉</h1><p>以商品为核心，建立能直接进入详情页、投放和内容渠道的视觉资产。</p></section><section class="category-grid">${catCards}</section>`
+  }
+  const cat = workCategories.find(c => c.name === state.group) || workCategories[0]
+  const series = data.images.filter(item => item.group === state.group)
+  const cards = series.map(item => workCard(item, data.images.indexOf(item), 'images')).join('')
+  return `<section class="page-intro category-page-intro"><button class="back-button" data-back-group type="button">← 返回全部类别</button><p class="eyebrow">IMAGE / ${cat.eyebrow}</p><h1>${state.group}</h1><p>${cat.note}，选择一个系列，查看该文件夹下的全部作品。</p></section><section class="work-grid">${cards}</section>`
+}
 function aboutPage() {
   return `<section class="about-page"><div class="page-intro"><p class="eyebrow">ABOUT / 关于我</p><h1>视觉是入口，<br /><em>系统是后劲。</em></h1><p>我是唐婧，一名专注 AIGC 内容创作的视觉设计师。我的工作横跨商品图、品牌海报、短视频、账号运营和 Agent 工作流，习惯把创意落到可执行、可复盘的交付里。</p></div><div class="about-layout"><div class="about-note"><span>我的工作方式</span><strong>视觉创作<br />+ 内容策略<br />+ AI 工作流</strong><small>欢迎通过本作品集与我联系</small></div><div class="timeline"><div><span>VISUAL</span><strong>商品与品牌内容</strong><p>为电商与内容团队提供图像、视频和运营资产。</p></div><div><span>PROCESS</span><strong>从单张图到整套系统</strong><p>以商品和渠道为中心，完成从概念到交付的完整链路。</p></div><div><span>AI WORKFLOW</span><strong>把工具变成方法</strong><p>持续探索 Skill、Agent 和 Vibe Coding 在真实业务中的边界。</p></div></div></div><div class="contact-panel"><p class="eyebrow">LET'S MAKE SOMETHING USEFUL</p><h2>有一个商品，<br />值得被看见。</h2><button class="primary-button" data-route="work">从作品开始 <span>↗</span></button></div></section>`
 }
 const workflowData = {
   skill: {
-    eyebrow: 'SKILL / 能力封装', title: 'Skill 搭建', count: '12', unit: 'SKILLS', intro: 'Skill 是面向具体设计任务的能力封装：把输入规范、出图策略和质检标准固定下来，让电商内容稳定交付。', flagship: '电商视觉生成 Skill', flagshipNote: '从商品需求进入，到主图、详情图和渠道适配完成的一条可复用链路。', image: assets + '广告设计/服装类/图片节点 1.webp', tags: ['商品详情图', '人物与穿搭', '场景生成', '海报封面', '短视频首帧', '内容文案', '数据复盘', '发布质检', '商品抠图', '风格迁移', '活动节点', '渠道适配'], steps: [['01','需求输入','平台、商品、受众、卖点、比例'],['02','结构化拆解','把卖点拆成画面、文案与构图规则'],['03','生成与质检','统一风格，检查主体、文字和安全边界'],['04','渠道交付','输出详情页、投放图和内容平台版本']], subs: ['商品详情图 Skill','服装穿搭 Skill','人物形象 Skill','电商海报 Skill','场景生成 Skill','短视频首帧 Skill']
+    eyebrow: 'SKILL / 能力封装', title: 'Skill 搭建', count: '12', unit: 'SKILLS', intro: 'Skill 是面向具体设计任务的能力封装：把输入规范、出图策略和质检标准固定下来，让电商内容稳定交付。', flagship: '电商视觉生成 Skill', flagshipNote: '从商品需求进入，到主图、详情图和渠道适配完成的一条可复用链路。', image: assets + '广告设计/服装系列/首图.webp', tags: ['商品详情图', '人物与穿搭', '场景生成', '海报封面', '短视频首帧', '内容文案', '数据复盘', '发布质检', '商品抠图', '风格迁移', '活动节点', '渠道适配'], steps: [['01','需求输入','平台、商品、受众、卖点、比例'],['02','结构化拆解','把卖点拆成画面、文案与构图规则'],['03','生成与质检','统一风格，检查主体、文字和安全边界'],['04','渠道交付','输出详情页、投放图和内容平台版本']], subs: ['商品详情图 Skill','服装穿搭 Skill','人物形象 Skill','电商海报 Skill','场景生成 Skill','短视频首帧 Skill']
   },
   agent: {
     eyebrow: 'AGENT / 业务编排', title: 'Agent 搭建', count: '5', unit: 'AGENTS', intro: 'Agent 是面向业务目标的任务编排：让多个 Skill 按顺序协作，完成选题、生产、审核与复盘，形成可追踪的内容闭环。', flagship: '小红书运营 Agent', flagshipNote: '从选题洞察到发布前检查，串起内容生产、审核和数据复盘。', image: assets + '小红书运营/小红书首页.webp', tags: ['选题洞察', '笔记生成', '视觉配图', '发布质检', '数据复盘'], steps: [['01','业务目标','明确账号定位、栏目与本轮增长任务'],['02','任务路由','按内容类型调用对应的 Skill 组合'],['03','人工审核','保留关键决策点，检查事实和品牌表达'],['04','复盘沉淀','记录版本、表现和下一次可复用的规则']], subs: ['商品内容批量 Agent','达人合作物料 Agent','活动节点内容 Agent','数据复盘 Agent']
@@ -159,17 +189,17 @@ const workflowData = {
 }
 const workflowSubcaseData = {
   skill: {
-    '商品详情图 Skill': { image: assets + '广告设计/美妆类/01_hero_main.webp', scene: '商品详情页 / 长图', note: '把商品卖点拆成首屏、功能和信任信息，形成可复用的详情图结构。', input: '商品资料、卖点、平台比例', process: '卖点分层 → 画面生成 → 文字与主体质检', output: '主图、详情长图、渠道适配版本' },
-    '服装穿搭 Skill': { image: assets + '广告设计/服装类/图片节点 1.webp', scene: '服饰上新 / 穿搭内容', note: '围绕人物、版型和搭配关系，快速生成统一的服装内容视觉。', input: '款式图、面料、季节与人群', process: '人物设定 → 穿搭组合 → 风格一致性检查', output: '穿搭主视觉、卖点卡片、封面图' },
-    '人物形象 Skill': { image: assets + '角色设计/真人写实类.webp', scene: '人物 IP / 品牌角色', note: '先固定人物设定和镜头规则，再扩展不同场景与内容用途。', input: '人物设定、气质关键词、镜头需求', process: '角色设定 → 场景扩展 → 面部与风格检查', output: '人物资产、栏目封面、内容配图' },
-    '电商海报 Skill': { image: assets + '海报封面/商品电商类.webp', scene: '活动投放 / 节点传播', note: '把促销信息和商品利益点压缩为第一眼可读的投放画面。', input: '活动机制、商品卖点、投放尺寸', process: '信息排序 → 视觉构图 → 文案与安全区检查', output: '活动海报、投放素材、封面变体' },
-    '场景生成 Skill': { image: assets + '广告设计/箱包类设计/图片节点 2.webp', scene: '商品空间 / 使用场景', note: '以真实使用情境承接商品功能，让材质和比例更容易被理解。', input: '商品图、空间风格、使用情境', process: '空间搭建 → 商品融合 → 光影与比例检查', output: '场景主图、详情场景、氛围素材' },
-    '短视频首帧 Skill': { image: assets + '海报封面/AI海报.webp', scene: '短视频开场 / 信息抓取', note: '为短视频先确定首帧构图、标题和商品焦点，减少后续试错。', input: '视频主题、商品焦点、平台比例', process: '开场钩子 → 画面生成 → 标题与主体检查', output: '首帧画面、标题版式、封面变体' },
+    '商品详情图 Skill': { image: assets + '广告设计/美妆系列/首图.webp', scene: '商品详情页 / 长图', note: '把商品卖点拆成首屏、功能和信任信息，形成可复用的详情图结构。', input: '商品资料、卖点、平台比例', process: '卖点分层 → 画面生成 → 文字与主体质检', output: '主图、详情长图、渠道适配版本' },
+    '服装穿搭 Skill': { image: assets + '广告设计/服装系列/首图.webp', scene: '服饰上新 / 穿搭内容', note: '围绕人物、版型和搭配关系，快速生成统一的服装内容视觉。', input: '款式图、面料、季节与人群', process: '人物设定 → 穿搭组合 → 风格一致性检查', output: '穿搭主视觉、卖点卡片、封面图' },
+    '人物形象 Skill': { image: assets + '角色设计/现代都市系列/霍景深.webp', scene: '人物 IP / 品牌角色', note: '先固定人物设定和镜头规则，再扩展不同场景与内容用途。', input: '人物设定、气质关键词、镜头需求', process: '角色设定 → 场景扩展 → 面部与风格检查', output: '人物资产、栏目封面、内容配图' },
+    '电商海报 Skill': { image: assets + '海报封面/电商海报系列/潮搭.webp', scene: '活动投放 / 节点传播', note: '把促销信息和商品利益点压缩为第一眼可读的投放画面。', input: '活动机制、商品卖点、投放尺寸', process: '信息排序 → 视觉构图 → 文案与安全区检查', output: '活动海报、投放素材、封面变体' },
+    '场景生成 Skill': { image: assets + '广告设计/箱包类系列/场景图.webp', scene: '商品空间 / 使用场景', note: '以真实使用情境承接商品功能，让材质和比例更容易被理解。', input: '商品图、空间风格、使用情境', process: '空间搭建 → 商品融合 → 光影与比例检查', output: '场景主图、详情场景、氛围素材' },
+    '短视频首帧 Skill': { image: assets + '海报封面/会议主视觉系列/AI海报.webp', scene: '短视频开场 / 信息抓取', note: '为短视频先确定首帧构图、标题和商品焦点，减少后续试错。', input: '视频主题、商品焦点、平台比例', process: '开场钩子 → 画面生成 → 标题与主体检查', output: '首帧画面、标题版式、封面变体' },
   },
   agent: {
-    '商品内容批量 Agent': { image: assets + '广告设计/美妆类/01_hero_main.webp', scene: '多 SKU 上新 / 批量生产', note: '将多个商品的资料统一整理，再按渠道批量调用视觉 Skill。', input: '商品清单、卖点表、渠道规则', process: '任务拆分 → Skill 路由 → 批量质检', output: '多 SKU 视觉包、版本清单、交付记录' },
+    '商品内容批量 Agent': { image: assets + '广告设计/美妆系列/首图.webp', scene: '多 SKU 上新 / 批量生产', note: '将多个商品的资料统一整理，再按渠道批量调用视觉 Skill。', input: '商品清单、卖点表、渠道规则', process: '任务拆分 → Skill 路由 → 批量质检', output: '多 SKU 视觉包、版本清单、交付记录' },
     '达人合作物料 Agent': { image: assets + '小红书运营/小红书首页.webp', scene: '达人合作 / 内容共创', note: '把达人 brief、品牌边界和平台规格放进同一条协作流程。', input: '达人 brief、品牌素材、发布时间', process: '需求匹配 → 素材编排 → 人工审核', output: '合作笔记、配图包、发布检查单' },
-    '活动节点内容 Agent': { image: assets + '海报封面/商品电商类.webp', scene: '大促节点 / 活动传播', note: '围绕节点节奏编排预热、爆发和返场内容，减少临时制作。', input: '节点日历、活动机制、渠道计划', process: '内容排期 → 素材生成 → 节点审核', output: '节点内容包、排期表、渠道版本' },
+    '活动节点内容 Agent': { image: assets + '海报封面/电商海报系列/潮搭.webp', scene: '大促节点 / 活动传播', note: '围绕节点节奏编排预热、爆发和返场内容，减少临时制作。', input: '节点日历、活动机制、渠道计划', process: '内容排期 → 素材生成 → 节点审核', output: '节点内容包、排期表、渠道版本' },
     '数据复盘 Agent': { image: assets + '小红书运营/小红书数据.webp', scene: '内容复盘 / 下一轮决策', note: '把平台数据整理成下一轮选题、视觉和发布时间的行动建议。', input: '内容数据、周期目标、历史版本', process: '数据归因 → 问题聚类 → 规则沉淀', output: '复盘摘要、优化清单、可复用规则' },
   },
 }
@@ -238,17 +268,21 @@ function workflowPage(mode) {
   const run = state.workflowRun.mode === mode ? state.workflowRun : { status: 'idle', step: -1 }
   return `<section class="workflow-page"><div class="page-intro workflow-intro"><div class="workflow-switch"><button class="${mode === 'skill' ? 'active' : ''}" data-workflow="skill">Skill 搭建</button><button class="${mode === 'agent' ? 'active' : ''}" data-workflow="agent">Agent 搭建</button></div><p class="eyebrow">${item.eyebrow}</p><h1>${item.title}</h1><p>${item.intro}</p></div><section class="workflow-board"><aside class="workflow-rail"><div class="rail-kicker">FLAGSHIP / 旗舰案例</div><h2>${item.flagship}</h2><p>${item.flagshipNote}</p><div class="rail-divider"></div><div class="coverage-title"><span>能力覆盖</span><strong>${item.count}<small>${item.unit}</small></strong></div><div class="coverage-list">${item.tags.map((tag, i) => `<span><b>${String(i + 1).padStart(2, '0')}</b>${tag}</span>`).join('')}</div><div class="rail-foot">可复用 · 可检查 · 可交接</div></aside><article class="flagship-card"><header class="flagship-head"><div><span class="status-tag">交互式演示</span><span class="status-tag light">模拟数据</span></div><span class="flagship-code">${mode === 'skill' ? 'E-COMMERCE VISUAL SKILL' : 'CONTENT OPERATIONS AGENT'}</span></header><div class="flagship-body"><div class="flagship-copy"><p class="eyebrow">${mode === 'skill' ? 'FROM BRIEF TO ASSET' : 'FROM GOAL TO LOOP'}</p><h2>${item.flagship}</h2><p>${item.flagshipNote}</p>${workflowDemoMarkup(mode, item)}<div class="flow-list">${item.steps.map((step, index) => `<button class="flow-step ${index === state.workflowStep ? 'active' : ''} ${run.status === 'running' && index <= run.step ? 'is-complete' : ''}" data-workflow-step="${index}" aria-current="${index === state.workflowStep ? 'step' : 'false'}"><span>${step[0]}</span><div><strong>${step[1]}</strong><small>${step[2]}</small></div><b>${run.status === 'running' && index < run.step ? '✓' : '↗'}</b></button>`).join('')}</div></div><div class="flagship-preview"><div class="preview-top"><span>WORKFLOW PREVIEW</span><span class="preview-dot ${run.status === 'running' ? 'is-running' : run.status === 'done' ? 'is-done' : ''}"></span></div><img src="${item.image}" alt="${item.flagship}流程示例" /><div class="preview-focus"><small>当前节点 ${activeStep[0]}</small><strong>${activeStep[1]}</strong><span>${activeStep[2]}</span></div><div class="preview-caption">${mode === 'skill' ? '输入规范 → 视觉生成 → 质检交付' : '业务目标 → Skill 路由 → 审核复盘'}</div></div></div></article></section><section class="subcase-section"><div class="subcase-heading"><div><p class="eyebrow">CASE COVERAGE / 子案例</p><h2>${mode === 'skill' ? '同一套方法，覆盖不同商品场景。' : '一个 Agent，连接多个内容任务。'}</h2></div><span>${item.subs.length} SUB CASES</span></div><div class="subcase-grid">${item.subs.map((sub, i) => `<button class="subcase-card" data-workflow-subcase="${sub}"><span>${String(i + 1).padStart(2, '0')}</span><strong>${sub}</strong><em>查看范围 ↗</em></button>`).join('')}</div></section></section>`
 }
+function imageLightbox(src) {
+  return `<div class="image-lightbox" data-lightbox><button class="lightbox-close" data-lightbox-close aria-label="关闭">×</button><img src="${src}" alt="放大预览" /></div>`
+}
 function modal(item) {
   if (item.kind === 'workflow-subcase') {
     return `<div class="modal-backdrop" data-close-modal><section class="detail-modal workflow-detail-modal" role="dialog" aria-modal="true"><button class="modal-close" data-close-modal aria-label="关闭">×</button><div class="workflow-modal-media"><img src="${item.image}" alt="${item.title}代表性作品" /><span>${item.scene}</span></div><div class="modal-content"><p class="eyebrow">${item.type}</p><h2>${item.title}</h2><p>${item.note}</p><div class="workflow-detail-grid"><div><span>INPUT / 输入</span><strong>${item.input}</strong></div><div><span>FLOW / 链路</span><strong>${item.process}</strong></div><div><span>OUTPUT / 输出</span><strong>${item.output}</strong></div></div><div class="detail-row"><span>适用场景</span><strong>${item.scene}</strong></div></div></section></div>`
   }
-  const media = item.video ? `<video controls autoplay poster="${item.video.replace(/\.mp4$/i, '')}.poster.webp" src="${item.video}"></video>` : item.gallery ? galleryMarkup(item) : item.image ? `<img src="${item.image}" alt="${item.title}" />` : `<div class="modal-placeholder"><span>${state.workflow === 'skill' ? 'SKILL' : 'AGENT'}</span><strong>${item.title}</strong></div>`
-  return `<div class="modal-backdrop" data-close-modal><section class="detail-modal" role="dialog" aria-modal="true"><button class="modal-close" data-close-modal aria-label="关闭">×</button><div class="modal-media">${media}</div><div class="modal-content"><p class="eyebrow">${item.type}</p><h2>${item.title}</h2><p>${item.note}</p><div class="detail-row"><span>DELIVERABLE</span><strong>${item.video ? '短视频 / 动效片段' : '视觉资产 / 商业内容'}</strong></div><div class="detail-row"><span>ROLE</span><strong>视觉创作 · AI 内容设计</strong></div></div></section></div>`
+  const media = item.video ? `<video controls autoplay poster="${item.video.replace(/\.mp4$/i, '')}.poster.webp" src="${item.video}"></video>` : item.gallery ? galleryMarkup(item) : item.image ? `<figure class="modal-single-image" data-zoom><img class="zoomable" src="${item.image}" alt="${item.title}" /></figure>` : `<div class="modal-placeholder"><span>${state.workflow === 'skill' ? 'SKILL' : 'AGENT'}</span><strong>${item.title}</strong></div>`
+  const intro = introFor(item)
+  return `<div class="modal-backdrop" data-close-modal><section class="detail-modal" role="dialog" aria-modal="true"><button class="modal-close" data-close-modal aria-label="关闭">×</button><div class="modal-media">${media}</div><div class="modal-content"><p class="eyebrow">${item.type}</p><h2>${item.title}</h2>${intro ? `<div class="modal-intro"><p>${intro}</p></div>` : ''}<div class="detail-row"><span>DELIVERABLE</span><strong>${item.video ? '短视频 / 动效片段' : '视觉资产 / 商业内容'}</strong></div><div class="detail-row"><span>ROLE</span><strong>视觉创作 · AI 内容设计</strong></div></div></section></div>`
 }
 function render() {
   let content = ''
   if (state.route === 'home') content = homeWithTools()
-  if (state.route === 'work') content = portfolioPage('images', '商品与品牌视觉', '以商品为核心，建立能直接进入详情页、投放和内容渠道的视觉资产。', ['全部', '广告设计', '海报封面', '人物形象'])
+  if (state.route === 'work') content = workImagesPage()
   if (state.route === 'social') content = portfolioPage('social', '运营内容与数据', '把账号定位、内容栏目和复盘数据整理成可持续的内容系统。', ['全部', '多平台运营'])
   if (state.route === 'motion') content = portfolioPage('motion', '视频作品', '剧情向与电商向的 AI 视频内容：用镜头语言铺垫情绪，把产品或故事讲完。', ['全部', '电商广告视频', '剧情短片'])
   if (state.route === 'systems') content = workflowPage(state.workflow)
@@ -264,6 +298,8 @@ function bindEvents() {
   })
   root.querySelectorAll('[data-route]').forEach(el => el.addEventListener('click', event => { event.preventDefault(); routeTo(el.dataset.route) }))
   root.querySelectorAll('[data-filter]').forEach(el => el.addEventListener('click', () => { state.filter = el.dataset.filter; render() }))
+  root.querySelectorAll('[data-group]').forEach(el => el.addEventListener('click', () => { state.group = el.dataset.group; render(); window.scrollTo({ top: 0, behavior: 'smooth' }) }))
+  root.querySelectorAll('[data-back-group]').forEach(el => el.addEventListener('click', () => { state.group = null; render(); window.scrollTo({ top: 0, behavior: 'smooth' }) }))
   root.querySelectorAll('[data-open]').forEach(el => el.addEventListener('click', () => { const item = data[el.dataset.set]?.[Number(el.dataset.open)]; if (item) { state.modal = item; render() } }))
   root.querySelectorAll('[data-close-modal]').forEach(el => el.addEventListener('click', event => { if (event.target === el || el.classList.contains('modal-close')) { state.modal = null; render() } }))
   root.querySelector('[data-theme-toggle]')?.addEventListener('click', () => { state.theme = state.theme === 'dark' ? 'light' : 'dark'; localStorage.setItem('portfolio-theme', state.theme); render() })
@@ -275,6 +311,8 @@ function bindEvents() {
   root.querySelectorAll('[data-resume-question]').forEach(el => el.addEventListener('click', () => { state.resumeAnswer = answerResumeQuestion(el.dataset.resumeQuestion); render() }))
   root.querySelector('[data-resume-toggle]')?.addEventListener('click', () => { state.resumeOpen = !state.resumeOpen; render() })
   root.querySelector('[data-resume-form]')?.addEventListener('submit', event => { event.preventDefault(); const input = event.currentTarget.elements['resume-question']; state.resumeAnswer = answerResumeQuestion(input.value); render() })
+  root.querySelectorAll('.zoomable').forEach(img => img.addEventListener('click', () => { state.lightbox = img.src; render() }))
+  root.querySelector('[data-lightbox]')?.addEventListener('click', event => { if (event.target === event.currentTarget || event.target.closest('[data-lightbox-close]')) { state.lightbox = null; render() } })
   setupMotion()
 }
 function setupMotion() {
@@ -369,6 +407,6 @@ function setupEnhancements() {
   }
 }
 window.addEventListener('popstate', () => { state.route = routeFromLocation(); render() })
-window.addEventListener('keydown', event => { if (event.key !== 'Escape') return; if (state.modal) { state.modal = null; render(); return } if (state.resumeOpen) { state.resumeOpen = false; render() } })
+window.addEventListener('keydown', event => { if (event.key !== 'Escape') return; if (state.lightbox) { state.lightbox = null; render(); return } if (state.modal) { state.modal = null; render(); return } if (state.resumeOpen) { state.resumeOpen = false; render() } })
 render()
 setupEnhancements()

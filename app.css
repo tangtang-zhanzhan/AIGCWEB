@@ -279,3 +279,49 @@
 .modal-close:hover{transform:rotate(90deg);color:var(--accent)}
 body{transition:background .4s ease,color .4s ease}
 .site-shell,.site-footer,.section-block,.statement-band,.about-note,.contact-panel,.workflow-page{transition:background .3s ease,color .3s ease}}
+
+/* ===== MODAL: full images + sticky intro + lightbox ===== */
+.detail-modal{height:auto;max-height:min(720px,92vh);overflow-y:auto;align-items:start}
+.modal-media{display:flex;flex-direction:column;background:var(--dark);min-height:0;overflow:visible;padding:0}
+.modal-media .modal-gallery-list{display:flex;flex-direction:column;gap:8px;width:100%}
+.modal-gallery-list .modal-gallery-item{position:relative;margin:0;flex:0 0 auto;cursor:zoom-in}
+.modal-gallery-list .modal-gallery-item img{width:100%;height:auto;object-fit:contain;display:block;background:#0d0c0b;transition:opacity .25s}
+.modal-gallery-list .modal-gallery-item:hover img{opacity:.92}
+.modal-gallery-list .modal-gallery-item figcaption{position:absolute;right:10px;bottom:10px;background:#0009;color:#fff;font-size:10px;letter-spacing:.1em;padding:4px 8px;border-radius:6px;pointer-events:none}
+.modal-single-image{margin:0;cursor:zoom-in}
+.modal-single-image img{width:100%;height:auto;object-fit:contain;display:block;background:#0d0c0b}
+.modal-content{position:sticky;top:0;align-self:start;height:fit-content;max-height:100%;overflow-y:auto;background:var(--surface);z-index:2}
+.modal-note{margin:0 0 18px}
+.modal-intro{margin-top:18px;color:var(--muted);font-size:14px;line-height:1.8}
+.modal-intro p{margin:0 0 .8em}
+.modal-intro p:last-child{margin-bottom:0}
+.image-lightbox{position:fixed;inset:0;z-index:100;background:#000c;display:flex;align-items:center;justify-content:center;padding:24px;animation:fade-in .2s}
+.image-lightbox img{max-width:100%;max-height:100%;object-fit:contain;box-shadow:0 24px 70px #0009}
+.lightbox-close{position:absolute;right:24px;top:24px;border:0;background:#fff;color:#111;border-radius:50%;width:38px;height:38px;font-size:24px;line-height:1;display:grid;place-items:center;cursor:pointer;transition:background .2s,color .2s,transform .2s}
+.lightbox-close:hover{background:var(--accent);color:#fff;transform:rotate(90deg)}
+@media(max-width:800px){
+.detail-modal{grid-template-columns:1fr;max-height:88vh}
+.modal-content{position:static;height:auto;max-height:none;overflow:visible}
+.modal-media{height:auto;max-height:none}
+.image-lightbox{padding:16px}
+.lightbox-close{right:16px;top:16px;width:34px;height:34px;font-size:20px}
+}
+/* ===== WORK CATEGORIES (two-level) ===== */
+.category-grid{margin:0 clamp(20px,8vw,140px);padding:34px 0 110px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.category-card{padding:0;text-align:left;border:1px solid var(--line);background:var(--surface);border-radius:18px;overflow:hidden;cursor:pointer;box-shadow:0 6px 24px #0000000f;transition:transform .3s ease,box-shadow .3s ease}
+.category-card:hover{transform:translateY(-5px);box-shadow:0 16px 44px #0000001c}
+.category-card:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.category-media{position:relative;display:block;aspect-ratio:4/3;overflow:hidden;background:var(--dark)
+.category-media img{width:100%;height:100%;display:block;object-fit:cover;transition:transform .5s ease}
+.category-card:hover .category-media img{transform:scale(1.05)}
+.category-count{position:absolute;right:12px;bottom:12px;background:#000a;color:#fff;font-size:11px;letter-spacing:.1em;padding:5px 10px;border-radius:999px}
+.category-copy{display:block;padding:18px 20px 20px}
+.category-copy small{display:block;color:var(--muted);font-size:11px;letter-spacing:.22em;margin-bottom:6px}
+.category-copy strong{display:block;font-size:21px;letter-spacing:.04em}
+.category-copy em{display:block;margin-top:10px;font-style:normal;color:var(--accent);font-size:13px}
+.back-button{border:1px solid var(--line);background:var(--surface);color:var(--ink);font:inherit;font-size:14px;line-height:1;padding:12px 16px;border-radius:12px;cursor:pointer;margin:2px 0 22px;box-shadow:0 2px 10px #0000000e;transition:background .25s,color .25s}
+.back-button:hover{background:var(--dark);color:var(--on-dark)}
+.category-page-intro{padding-top:10px}
+@media(max-width:900px){.category-grid{grid-template-columns:1fr;gap:16px}
+.category-card .category-media{aspect-ratio:16/10}}}
+
