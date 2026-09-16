@@ -94,7 +94,7 @@ function routeTo(route) {
 }
 function coverFor(item) { return (item.gallery && item.gallery[0]) || item.image }
 function mediaFor(item) {
-  return item.video ? `<video muted loop playsinline preload="none" src="${item.video}"></video>` : `<img src="${coverFor(item)}" alt="${item.title}" loading="lazy" decoding="async" />`
+  return item.video ? `<video muted loop playsinline preload="metadata" poster="${item.video.replace(/\.mp4$/i, '')}.poster.webp" src="${item.video}"></video>` : `<img src="${coverFor(item)}" alt="${item.title}" loading="lazy" decoding="async" />`
 }
 function workCard(item, index, set) {
   return `<button class="work-card ${item.video ? 'is-video' : ''}" data-open="${index}" data-set="${set}"><span class="work-media">${mediaFor(item)}<span class="work-index">${String(index + 1).padStart(2, '0')}</span>${item.video ? '<span class="play-mark">播放</span>' : ''}</span><span class="work-meta"><span><strong>${item.title}</strong><small>${item.type}</small></span><span class="work-arrow">↗</span></span></button>`
@@ -242,7 +242,7 @@ function modal(item) {
   if (item.kind === 'workflow-subcase') {
     return `<div class="modal-backdrop" data-close-modal><section class="detail-modal workflow-detail-modal" role="dialog" aria-modal="true"><button class="modal-close" data-close-modal aria-label="关闭">×</button><div class="workflow-modal-media"><img src="${item.image}" alt="${item.title}代表性作品" /><span>${item.scene}</span></div><div class="modal-content"><p class="eyebrow">${item.type}</p><h2>${item.title}</h2><p>${item.note}</p><div class="workflow-detail-grid"><div><span>INPUT / 输入</span><strong>${item.input}</strong></div><div><span>FLOW / 链路</span><strong>${item.process}</strong></div><div><span>OUTPUT / 输出</span><strong>${item.output}</strong></div></div><div class="detail-row"><span>适用场景</span><strong>${item.scene}</strong></div></div></section></div>`
   }
-  const media = item.video ? `<video controls autoplay src="${item.video}"></video>` : item.gallery ? galleryMarkup(item) : item.image ? `<img src="${item.image}" alt="${item.title}" />` : `<div class="modal-placeholder"><span>${state.workflow === 'skill' ? 'SKILL' : 'AGENT'}</span><strong>${item.title}</strong></div>`
+  const media = item.video ? `<video controls autoplay poster="${item.video.replace(/\.mp4$/i, '')}.poster.webp" src="${item.video}"></video>` : item.gallery ? galleryMarkup(item) : item.image ? `<img src="${item.image}" alt="${item.title}" />` : `<div class="modal-placeholder"><span>${state.workflow === 'skill' ? 'SKILL' : 'AGENT'}</span><strong>${item.title}</strong></div>`
   return `<div class="modal-backdrop" data-close-modal><section class="detail-modal" role="dialog" aria-modal="true"><button class="modal-close" data-close-modal aria-label="关闭">×</button><div class="modal-media">${media}</div><div class="modal-content"><p class="eyebrow">${item.type}</p><h2>${item.title}</h2><p>${item.note}</p><div class="detail-row"><span>DELIVERABLE</span><strong>${item.video ? '短视频 / 动效片段' : '视觉资产 / 商业内容'}</strong></div><div class="detail-row"><span>ROLE</span><strong>视觉创作 · AI 内容设计</strong></div></div></section></div>`
 }
 function render() {
@@ -256,6 +256,12 @@ function render() {
   shell(content)
 }
 function bindEvents() {
+  root.querySelectorAll('.work-card .work-media video').forEach(video => {
+    const card = video.closest('.work-card')
+    if (!card) return
+    card.addEventListener('mouseenter', () => { video.currentTime = 0; video.play().catch(() => {}) })
+    card.addEventListener('mouseleave', () => { video.pause() })
+  })
   root.querySelectorAll('[data-route]').forEach(el => el.addEventListener('click', event => { event.preventDefault(); routeTo(el.dataset.route) }))
   root.querySelectorAll('[data-filter]').forEach(el => el.addEventListener('click', () => { state.filter = el.dataset.filter; render() }))
   root.querySelectorAll('[data-open]').forEach(el => el.addEventListener('click', () => { const item = data[el.dataset.set]?.[Number(el.dataset.open)]; if (item) { state.modal = item; render() } }))
